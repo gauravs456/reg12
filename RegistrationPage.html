@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<title>Registration Form</title>
+	<link rel="stylesheet" href="styles.css">
+	
+
+	
+	
+	
+</head>
+<body>
+
+
+<script type="text/javascript">
+
+function validate() {
+    if(nameflag==true && passwordflag==true&& phoneflag==true&& postalflag==true && emailflag==true){
+        
+    return true;
+    }
+     else{
+         
+        return false;
+            
+     }
+	window.onbeforeunload = function() { return "You work will be lost."; };
+    return( true );
+	
+}
+
+var emailflag;
+var nameflag;
+var phoneflag;
+var passwordflag;
+var confirmpasswordflag;
+var postalflag;
+
+
+function Gender(){
+    var e = document.getElementById("Gender");
+var strUser = e.options[e.selectedIndex].value;
+alert(strUser);
+}
+
+
+
+function nameval(name){
+
+    var reg = /^([a-zA-Z]{3,30}\s*)+$/;
+    if (reg.test(name) == false) 
+            {
+                nameflag=false;
+                document.getElementById('Name').style.color = 'red';
+                document.getElementById('Name').style.borderColor = "red"; 
+            }
+            
+            else{
+                nameflag=true;
+                document.getElementById('Name').style.color = 'green';
+                document.getElementById('Name').style.borderColor = "green";
+            }
+     
+     }
+
+
+
+ function emailval(emailid){
+
+var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+if (reg.test(emailid) == false) 
+        {
+			document.getElementById('Email').style.color = 'red';
+            document.getElementById('Email').style.borderColor = "red";
+            emailflag=false;
+           
+        }
+		
+		else{
+		emailflag=true;
+		document.getElementById('Email').style.color = 'green';
+        document.getElementById('Email').style.borderColor = "green";
+		}
+ 
+ }
+
+
+ var check = function() {
+	
+	var x= document.getElementById('Password').value;
+	var y=document.getElementById('ConfirmPassword').value;
+	
+	if(document.getElementById('Password').value.length<6){
+        document.getElementById('Password').style.color = 'red';
+        document.getElementById('ConfirmPassword').style.color = 'red';
+        document.getElementById('ConfirmPassword').style.borderColor = "red";
+        document.getElementById('Password').style.borderColor = "red";
+        passwordflag=false;
+	}
+	
+	
+     else if (document.getElementById('Password').value ==
+        document.getElementById('ConfirmPassword').value ) {
+        passwordflag=true;
+        document.getElementById('Password').style.color = 'green';
+        document.getElementById('ConfirmPassword').style.color = 'green';
+        document.getElementById('ConfirmPassword').style.borderColor = "green";
+        document.getElementById('Password').style.borderColor = "green";
+  }
+  
+  
+  else {
+      passwordflag=false;
+    document.getElementById('Password').style.color = 'red';
+    document.getElementById('ConfirmPassword').style.color = 'red';
+    document.getElementById('Password').style.borderColor = "red";
+    document.getElementById('ConfirmPassword').style.borderColor = "red";
+  }
+}
+
+
+function isNumber(evt) {
+    var iKeyCode = (evt.which) ? evt.which : evt.keyCode
+    if (iKeyCode != 46 && iKeyCode > 31 && (iKeyCode < 48 || iKeyCode > 57))
+        return false;
+
+    return true;
+}  
+
+
+function phoneval(phone){
+    var reg = /^([0|\+[0-9]{1,5})?([7-9][0-9]{9})$/;
+if(reg.test(phone) == false){
+    document.getElementById('Phone').style.color = 'red';
+    document.getElementById('Phone').style.borderColor = "red";
+    phoneflag=false;
+}
+else{
+    phoneflag=true;
+document.getElementById('Phone').style.color = 'green';
+document.getElementById('Phone').style.borderColor = "green";
+      
+}
+}
+
+function postal(postal){
+    
+if(postal.length==6){
+    document.getElementById('PostalCode').style.color = 'green';
+    document.getElementById('PostalCode').style.borderColor = "green";
+    postalflag=true;
+    
+}
+else{   
+    postalflag=false;
+document.getElementById('PostalCode').style.color = 'red';
+document.getElementById('PostalCode').style.borderColor = "red";
+      
+}
+}
+
+
+function submit(){
+
+var pass=document.getElementById('Name').value;
+ var email=document.getElementById('Email').value;
+ var pass=document.getElementById('Password').value;
+ var confirmpass=document.getElementById('ConfirmPassword').value;
+ var phone=document.getElementById('Phone').value;
+ if(nameflag==true && passwordflag==true&& phoneflag==true&& postalflag==true && emailflag==true){
+   
+    
+ 
+}
+ else{
+     
+        
+ }
+}
+</script>
+ 
+ 
+<div class="wrapper" id="contain">
+    <div class="title">
+      Registration Form
+    </div>
+   
+    <div class="form">
+      <form action = "https://gauravsharmatemp.000webhostapp.com/Register.php" method="post" name = "myForm" onsubmit = "return(validate());">
+       <div class="inputfield">
+          <label>Name</label>
+          <input type="text" class="input" id="Name" name="Name" onkeyup="nameval(this.value)">
+        </div> 
+          <div class="inputfield">
+            <label>Gender</label>
+            <div class="custom_select" >
+              <select name="Gender" id="Gender" name="Gender" onchange="Gender();" >
+                <option value="">Select</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </div>
+         </div> 
+        <div class="inputfield">
+          <label>Email Address</label>
+          <input type="text" class="input" id="Email" autocomplete="off" name="Email"  onkeyup="emailval(this.value);" required>
+       </div>  
+      
+       
+      <div class="inputfield">
+          <label>Phone Number</label>
+          <input type="text" maxlength="10" class="input" id="Phone"  name="Phone" onkeyup="phoneval(this.value);"  onkeypress="javascript:return isNumber(event)" required>
+       </div> 
+      
+      <div class="inputfield">
+          <label>Postal Code</label>
+          <input type="text" class="input" id="PostalCode"  name="PostalCode" onkeyup="postal(this.value);">
+       </div> 
+       <div class="inputfield">
+        <label>Password</label>
+        <input type="password" class="input" id="Password"  onkeyup='check();' name="Password"  required >
+     </div>  
+    <div class="inputfield">
+        <label>Confirm Password</label>
+        <input type="password" class="input" id="ConfirmPassword" name="ConfirmPassword" onkeyup='check();' required>
+     </div> 
+     
+      
+      <div class="inputfield">
+        <input type="submit"  id="button" value="submit" class="btn">
+      </div>
+    </form>     
+    </div>
+  
+</div>	
+
+</body>
+</html>
