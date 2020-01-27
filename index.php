@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="styles.css">
 	 <script>
 	 var validateflag="";
-	 
+	 $('#validateflag').val("Gee"); 
     $(document).ready(function(){  
       $('#Email').keyup(function(){
    
@@ -18,25 +18,41 @@
         
    
         $.ajax({
-         url:'https://gauravsharmatemp.000webhostapp.com//Register.php',
+         url:'https://gauravsharmatemp.000webhostapp.com/emailcheck.php',
          method:"POST",
          data:{Email:Email},
          success:function(data)
          {
-         if(data==1){
+            
+             if(emailflag==true){
+                 if(data==1){
+                     validateflag=data;
+                     
              $('#availability').html('<p style="color:red "  >Email Id already Exist</p>');
              
          }
-         else{
+          else{
+             validateflag=data;
              $('#availability').html('<p style="color:green"> Available</p>');
          }
+             }
+         
+        
          }
         })
    
      });
     });  
    </script>
+ <script>
+$(document).ready(function(){
+  $('input').blur(function(){
+  
+    $('input[name="validateflag"]').val(validateflag);
    
+  });
+});
+</script>  
 	
 
 	
@@ -45,12 +61,11 @@
 </head>
 <body>
 
-
 <script type="text/javascript">
 
 function validate() {
     if(nameflag==true && passwordflag==true&& phoneflag==true&& postalflag==true && emailflag==true){
-        
+     
     return true;
     }
      else{
@@ -213,6 +228,50 @@ var pass=document.getElementById('Name').value;
 }
 
 
+var formType = 0;
+
+function formToggle() {
+    // flip function for formType value
+	
+    formType++;
+    formType = formType % 2;
+	
+    
+    // If it's a signup form
+    if (formType === 1) {
+        
+        // Hide login elements
+        $("#signup").slideDown(250);
+       
+        
+        // Show signup elements
+        $("#login_form").slideUp(250);
+		
+		  var elem = document.getElementById("reg");
+		  elem.value="Login";
+		  
+		  document.getElementById("up").innerHTML="Registration Form";
+        
+    }
+    
+    // If it's a login form
+    if (formType === 0) {
+      
+        // Hide signup elements
+        $("#signup").slideUp(250);
+        var elem = document.getElementById("reg");
+		  elem.value="Register";
+		  document.getElementById("up").innerHTML="Login Form";
+        
+        // Show Login elements
+        $('#login_form').slideDown(250);
+    }
+
+};
+
+
+
+
 
 
 
@@ -225,16 +284,40 @@ var pass=document.getElementById('Name').value;
  
  
 <div class="wrapper" id="contain">
-    <div class="title" id="formOption" >
-      Registration Form
+    
+  <div  class="title">
+     <h3 id="up" class="title">Login Form<h3>
     </div>
-   
+	
+	
+	
+	
+	
     <div class="form">
-        
-      <form action = "https://gauravsharmatemp.000webhostapp.com/Register.php" id="signup_form" method="post" name = "myForm" onsubmit = "return(validate());">
-       <div class="inputfield">
+	<form id="login_form" name="login_form" method="post" action="login()">
+                
+              <div class="inputfield">
+          <label>Email Address</label>
+          <input type="text" class="input" id="Emaillogin" autocomplete="off" name="Email"  onkeyup="emailval(this.value);" required>
+		  
+       </div>  
+	     <div class="inputfield">
+        <label>Password</label>
+        <input type="password" class="input" id="Passwordlogin"  onkeyup='check();' name="Password"  required >
+     </div>  
+	 <div class="inputfield">
+        <input type="submit"  id="Log" value="Login" class="btn">
+      </div>
+            </form>
+            
+             <form id="signup" action = "https://gauravsharmatemp.000webhostapp.com/Register.php" method="post" name = "myForm" onsubmit = "return(validate());">
+       <div class="inputfield"> 
+           <input type='hidden' id='validateflag' name='validateflag' > 
+          
           <label>Name</label>
           <input type="text" class="input" id="Name" name="Name" onkeyup="nameval(this.value)">
+		  
+		  <h3 id="show"></h3>
         </div> 
           <div class="inputfield">
             <label>Gender</label>
@@ -249,10 +332,9 @@ var pass=document.getElementById('Name').value;
         <div class="inputfield">
           <label>Email Address</label>
           <input type="text" class="input" id="Email" autocomplete="off" name="Email"  onkeyup="emailval(this.value);" required>
-          
+		  
        </div>  
-      
-       <p id="availability"></p>
+	   <p id="availability"></p>
       
        
       <div class="inputfield">
@@ -273,14 +355,16 @@ var pass=document.getElementById('Name').value;
         <input type="password" class="input" id="ConfirmPassword" name="ConfirmPassword" onkeyup='check();' required>
      </div> 
      
-      <div class="inputfield">
-        <input type="submit"  id="button"  value="Login" onclick="formToggle();" class="btn">
-      </div>
       
       <div class="inputfield">
         <input type="submit"  id="button" value="submit" class="btn">
       </div>
-    </form>     
+	  
+    </form>   
+        
+     <div class="inputfield">
+        <input type="Button"  id="reg" value="Register" onclick="formToggle();" class="btn">
+      </div>
     </div>
   
 </div>	
