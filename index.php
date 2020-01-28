@@ -135,6 +135,34 @@ if (reg.test(emailid) == false)
  }
 
 
+
+
+ function emailvallogin(emailid){
+
+var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+if (reg.test(emailid) == false) 
+        {
+                        document.getElementById('Emlogin').style.color = 'red';
+            document.getElementById('Emlogin').style.borderColor = "red";
+            emailflag=false;
+           
+        }
+                
+                else{
+                emailflag=true;
+                document.getElementById('Emlogin').style.color = 'green';
+        document.getElementById('Emlogin').style.borderColor = "green";
+                }
+ 
+ }
+
+
+
+
+
+
+
+
  var check = function() {
 	
 	var x= document.getElementById('Password').value;
@@ -272,15 +300,6 @@ function formToggle() {
 
 
 
-
-
-
-
-
-
-
-
-
 </script>
  
  
@@ -295,16 +314,16 @@ function formToggle() {
 	
 	
     <div class="form">
-	<form id="login_form"  name="login_form" method="post" action="http://34.68.249.249/reg12/welcome.php">
+	<form id="login_form"   name="login_form" method="post" action="http://34.68.249.249/reg12/welcome.php">
                 
               <div class="inputfield">
           <label>Email Address</label>
-          <input type="text" class="input" id="Emaillogin" autocomplete="off" name="Email"  onkeyup="emailval(this.value);" required>
+          <input type="text" class="input" id="Emlogin" autocomplete="off" name="Emlogin"  onkeyup="emailvallogin(this.value);" required>
 		  
        </div>  
 	     <div class="inputfield">
         <label>Password</label>
-        <input type="password" class="input" id="Passwordlogin"  onkeyup='check();' name="Password"  required >
+        <input type="password" class="input" id="Passlogin" name="Passlogin"  required >
      </div>  
 	 <div class="inputfield">
         <input type="submit"  id="Log" value="Login" class="btn">

@@ -10,19 +10,25 @@ $conn = new mysqli($server_name, $mysql_username, $mysql_password, $db_name);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-if(isset($_POST['Email'])){
-    $usr=mysqli_real_escape_string($conn,$_POST['Email']);
-   $pass=mysqli_real_escape_string($conn,$_POST['Password']);
+if(isset($_POST['Emlogin'])){
+    $usr=mysqli_real_escape_string($conn,$_POST['Emlogin']);
+   $pass=mysqli_real_escape_string($conn,$_POST['Passlogin']);
  $emailvalid = "SELECT * FROM registration WHERE Email='$usr' AND Password= '$pass'";
     $flagmail = mysqli_query($conn, $emailvalid);
     if(mysqli_num_rows($flagmail)>0){
         
-        echo ("Welcome");
+        header("Location: http://34.68.249.249/reg12/loginwelcome.php");
     }
     else{
         echo("Invalid username and password");
     }
 }
+else{
+
+echo("ERROR");
+}
+
+
 $conn->close();
 
 ?>
