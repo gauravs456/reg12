@@ -1,9 +1,9 @@
 <?php
 
- $db_name="id12313601_rtds";
-    $mysql_username="id12313601_rtds";
-    $mysql_password="16csu123";
-    $server_name="localhost";
+ $db_name="rtds1";
+    $mysql_username="puppy";
+    $mysql_password="Puppy@123";
+    $server_name="34.68.249.249";
      $flag= "";
  
 

@@ -18,7 +18,7 @@
         
    
         $.ajax({
-         url:'https://gauravsharmatemp.000webhostapp.com/emailcheck.php',
+         url:'http://34.68.249.249/reg12//emailcheck.php',
          method:"POST",
          data:{Email:Email},
          success:function(data)
@@ -49,6 +49,7 @@ $(document).ready(function(){
   $('input').blur(function(){
   
     $('input[name="validateflag"]').val(validateflag);
+
    
   });
 });
@@ -310,7 +311,7 @@ function formToggle() {
       </div>
             </form>
             
-             <form id="signup" action = "https://gauravsharmatemp.000webhostapp.com/Register.php" method="post" name = "myForm" onsubmit = "return(validate());">
+             <form id="signup" action = "http://34.68.249.249/reg12/Register.php" method="post" name = "myForm" onsubmit = "return(validate());">
        <div class="inputfield"> 
            <input type='hidden' id='validateflag' name='validateflag' > 
           
