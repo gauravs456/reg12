@@ -83,15 +83,6 @@ include('welcome.php');
     </style>
 </head>
 <body>
-<script type="text/javascript">
-
-function someFunction() {
-
-
-}
-
-</script>
-
 
 
 
@@ -104,7 +95,7 @@ function someFunction() {
     <a href="#">Services</a>
     <a href="#">Clients</a>
     <a href="#">Contact</a>
-    <a href="http://34.68.249.249/reg12/index.php" onclick="someFunction(); " >Log Out</a>
+    <a href="http://34.68.249.249/reg12/logout.php" >Log Out</a>
 
 
 
