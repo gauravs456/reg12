@@ -91,8 +91,7 @@
 
 
 </head>
-<body  onload="noBack();" 
-	onpageshow="if (event.persisted) noBack();" onunload="">
+<body>
 <script type="text/javascript">
     function validate() {
         if(nameflag==true && passwordflag==true&& phoneflag==true&& postalflag==true && emailflag==true){
@@ -238,7 +237,7 @@
     }
 	
 	
-	function noBack() { window.history.forward(); }
+	
 	
 	
     function submit(){
