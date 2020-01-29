@@ -26,14 +26,13 @@ if(isset($_POST['Emlogin'])){
 
         while($row = $flagmail->fetch_assoc()) {
             $_SESSION['name']=$row["name"];
-             $_SESSION['gender']=$gender;
-             $_SESSION['email']=$email;
-             $_SESSION['phone']=$phone;
-            $_SESSION['postal']=$postalcode;
+             $_SESSION['gender']=$row["gender"];
+             $_SESSION['email']=$row["email"];
+             $_SESSION['phone']=$row["phone"];
+            $_SESSION['postal']=$row["postalcode"];
 //             echo "Name: " . $row["name"]. " - Email: " . $row["email"].  "<br>";
         }
-    echo  $_SESSION['name'];
-        echo "hi";
+  
      
         
         //         header("Location: http://34.68.249.249/reg12/loginwelcome.php");
