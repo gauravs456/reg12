@@ -43,6 +43,7 @@
 
             });
         });
+<<<<<<< HEAD
     </script>
     <script>
         $(document).ready(function(){
@@ -55,10 +56,13 @@
     </script>
 
     <script>
+=======
+
+>>>>>>> 89605ddc694e5f9c1b45e139892762faa1bab246
 
         $(document).ready(function(){
             $('#loginbtn').onclick(function(){
-
+                alert("HELLO");
                 var Emailogin = document.getElementById("Emlogin");
                 var passlogin  =document.getElementById("Passlogin");
                 alert(Emailogin);
@@ -81,7 +85,7 @@
 
                             }
                             else{
-                               alert("HEHE");
+                                alert("HEHE");
                             }
                         }
 
@@ -91,8 +95,18 @@
 
             });
         });
-    </script>
 
+
+    </script>
+    <script>
+        $(document).ready(function(){
+            $('input').blur(function(){
+
+                $('input[name="validateflag"]').val(validateflag);
+
+            });
+        });
+    </script>
 
 
 
@@ -210,7 +224,7 @@
         var iKeyCode = (evt.which) ? evt.which : evt.keyCode
         if (iKeyCode != 46 && iKeyCode > 31 && (iKeyCode < 48 || iKeyCode > 57))
             return false;
-        return true;
+        return true; 
     }
     function phoneval(phone){
         var reg = /^([0|\+[0-9]{1,5})?([7-9][0-9]{9})$/;
@@ -321,7 +335,11 @@
                 <input type="password" class="input" id="Passlogin" name="Passlogin"  required >
             </div>
             <div class="inputfield">
+<<<<<<< HEAD
                 <input type="Button"   id="loginbtn" value="Login" name="loginbtn" class="btn">
+=======
+                <input type="Button"  id="loginbtn" value="Login" name="loginbtn" class="btn">
+>>>>>>> 89605ddc694e5f9c1b45e139892762faa1bab246
             </div>
         </form>
 
