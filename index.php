@@ -56,9 +56,7 @@
                 $.ajax({
                     url: 'http://34.68.249.249/reg12//welcome.php',
                     method:"POST",
-                       data: {Emlogin:loginem,
-                          Passlogin : loginpass
-                    },
+                       data: {Emlogin:loginem, Passlogin : loginpass},
                     success: function(result){
                         if(result==1){
                             alert("HIPPO");
