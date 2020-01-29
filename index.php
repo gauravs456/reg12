@@ -71,6 +71,7 @@
 
 
                 $.ajax({
+
                     url:'http://34.68.249.249/reg12//emailcheck.php',
                     method:"POST",
                     data:{Email:Email},
@@ -326,7 +327,7 @@
                 <input type="password" class="input" id="Passlogin" name="Passlogin"  required >
             </div>
             <div class="inputfield">
-                <input type="submit"  id="loginbtn" value="Login" name="loginbtn" class="btn">
+                <input type="Button   id="loginbtn" value="Login" name="loginbtn" class="btn">
             </div>
         </form>
 
