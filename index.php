@@ -55,7 +55,7 @@
 //                alert(loginpass);
                 $.ajax({
                     url: 'http://34.68.249.249/reg12//welcome.php',
-                    data: {Emlogin:loginem,
+                    data: {Emlogin:loginem
                           Passlogin : loginpass
                     },
                     success: function(result){
