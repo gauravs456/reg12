@@ -59,11 +59,11 @@
                        data: {Emlogin:loginem, Passlogin : loginpass},
                     success: function(result){
                         if(result==1){
-                            alert("HIPPO");
+                             header("Location: http://34.68.249.249/reg12/loginwelcome.php");
                         }
                         else
                         {
-                            alert(result);
+                            alert("Sorry Already Registered");
                         }
 
 
