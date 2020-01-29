@@ -8,15 +8,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>Registration Form</title>
     <link rel="stylesheet" href="styles.css">
-	
-	
-	 <script type="text/javascript">
-        function preventBack() { window.history.forward(); }
-        setTimeout("preventBack()", 0);
-        window.onunload = function () { null };
-    </script>
-	
-	
     <script>
         var validateflag="";
         $('#validateflag').val("Gee");
@@ -102,16 +93,21 @@
 </head>
 <body>
 	
-	 <script>
-      $(document).ready(function() {
-         function disablePrev() { window.history.forward() }
-         window.onload = disablePrev();
-         window.onpageshow = function(evt) { if (evt.persisted) disableBack() }
-      });
-   </script>
+	
 	
 	
 <script type="text/javascript">
+	
+	$(document).ready(function() {
+function disableBack() { window.history.forward() }
+
+window.onload = disableBack();
+window.onpageshow = function(evt) { if (evt.persisted) disableBack() }
+});
+	
+	
+	
+	
     function validate() {
         if(nameflag==true && passwordflag==true&& phoneflag==true&& postalflag==true && emailflag==true){
 
