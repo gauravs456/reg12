@@ -47,16 +47,15 @@
 
         $(document).ready(function(){
             $("#loginbtn").click(function(){
-                $.ajax({
-                  url: "demo_test.txt", 
-                  success: function(result){
-                alert("HIPPO");
-                   
-                }
-                        
 
-
-                });
+                alert("Bocer");
+//                $.ajax({url: "demo_test.txt", success: function(result){
+//                alert("HIPPO");
+//
+//                }
+//
+//
+//                });
             });
         });
 
