@@ -51,20 +51,27 @@
                 alert("Bocer");
                 var loginem=document.getElementById("Emlogin").value;
                 var loginpass=document.getElementById("Passlogin").value;
-                alert(loginem);
-                alert(loginpass);
-//                $.ajax({
-//                    url: 'http://34.68.249.249/reg12//welcome.php'",
-//                    data: {Email:Email
-//                            Password: Passoword
-//                    }
-//                    success: function(result){
-//                alert("HIPPO");
-//
-//                }
-//
-//
-//                });
+//                alert(loginem);
+//                alert(loginpass);
+                $.ajax({
+                    url: 'http://34.68.249.249/reg12//welcome.php'",
+                    data: {Emlogin:loginem
+                          Passlogin : loginpass
+                    }
+                    success: function(result){
+                        if(result==1){
+                            alert("HIPPO");
+                        }
+                        else
+                        {
+                            alert("Sorry");
+                        }
+
+
+                }
+
+
+                });
             });
         });
 
