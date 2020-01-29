@@ -2,6 +2,7 @@
 include('welcome.php');
 
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -91,41 +92,65 @@ include('welcome.php');
     <a href="#">Services</a>
     <a href="#">Clients</a>
     <a href="#">Contact</a>
+
+
 </div>
 <div id="main">
     <h2 class="upperhead">Hello sir</h2>
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
         <hr>
     <h2  class="headingfont" style="margin-top: 1% ">Overview</h2>
+
+
+
         <div class="rectangle">
             <div class="inputfield">
                 <label>Name</label>
-                <h2 style="display: inline-block; margin-left: 2%">fgh</h2>
+                <h2 style="display: inline-block; margin-left: 2%">xcv</h2>
 
             </div>
 
             <div class="rectangle">
                 <div class="inputfield">
                     <label>Gender</label>
-                    <h2 style="display: inline-block; margin-left: 2%">gj</h2>
+                    <h2 style="display: inline-block; margin-left: 2%">xcv</h2>
 
                 </div>
 
                 <div class="rectangle">
                     <div class="inputfield">
                         <label>Email Address</label>
-                        <h2 style="display: inline-block; margin-left: 2%"></h2>
+                        <h2 style="display: inline-block; margin-left: 2%">xcv</h2>
 
                     </div>
 
                     <div class="rectangle">
                         <div class="inputfield">
                             <label>Phone</label>
-                            <h2 style="display: inline-block; margin-left: 2%"></h2>
+                            <h2 style="display: inline-block; margin-left: 2%">xcv</h2>
 
                         </div>
+
+
+
+
+
+
+
+
+
+
+
     </div>
+
+
+
 </div>
+
+
+
+
+
 <script>
     function openNav() {
         document.getElementById("mySidenav").style.width = "250px";
