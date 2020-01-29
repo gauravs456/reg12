@@ -49,7 +49,16 @@
             $("#loginbtn").click(function(){
 
                 alert("Bocer");
-//                $.ajax({url: "demo_test.txt", success: function(result){
+                var loginem=document.getElementById("Emlogin");
+                var loginpass=document.getElementById("Passlogin");
+                alert(loginem);
+                alert(loginpass);
+//                $.ajax({
+//                    url: 'http://34.68.249.249/reg12//welcome.php'",
+//                    data: {Email:Email
+//                            Password: Passoword
+//                    }
+//                    success: function(result){
 //                alert("HIPPO");
 //
 //                }
