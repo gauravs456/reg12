@@ -326,7 +326,7 @@
                 <input type="password" class="input" id="Passlogin" name="Passlogin"  required >
             </div>
             <div class="inputfield">
-                <input type="submit"  id="loginbtn" value="loginbtn" class="btn">
+                <input type="submit"  id="loginbtn" value="Login" name="loginbtn" class="btn">
             </div>
         </form>
 
