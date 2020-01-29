@@ -49,8 +49,8 @@
             $("#loginbtn").click(function(){
 
                 alert("Bocer");
-                var loginem=document.getElementById("Emlogin");
-                var loginpass=document.getElementById("Passlogin");
+                var loginem=document.getElementById("Emlogin").value;
+                var loginpass=document.getElementById("Passlogin").value;
                 alert(loginem);
                 alert(loginpass);
 //                $.ajax({
