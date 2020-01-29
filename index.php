@@ -59,7 +59,7 @@
                        data: {Emlogin:loginem, Passlogin : loginpass},
                     success: function(result){
                         if(result==1){
-                             header("Location: http://34.68.249.249/reg12/loginwelcome.php");
+                             window.location.href = 'http://34.68.249.249/reg12/loginwelcome.php';
                         }
                         else
                         {
