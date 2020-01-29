@@ -113,21 +113,21 @@ include('welcome.php');
             <div class="rectangle">
                 <div class="inputfield">
                     <label>Gender</label>
-                    <h2 style="display: inline-block; margin-left: 2%">xcv</h2>
+                    <h2 style="display: inline-block; margin-left: 2%"><?php echo  $_SESSION['gender'] ?></h2>
 
                 </div>
 
                 <div class="rectangle">
                     <div class="inputfield">
                         <label>Email Address</label>
-                        <h2 style="display: inline-block; margin-left: 2%">xcv</h2>
+                        <h2 style="display: inline-block; margin-left: 2%"><?php echo  $_SESSION['email'] ?></h2>
 
                     </div>
 
                     <div class="rectangle">
                         <div class="inputfield">
                             <label>Phone</label>
-                            <h2 style="display: inline-block; margin-left: 2%">xcv</h2>
+                            <h2 style="display: inline-block; margin-left: 2%"><?php echo  $_SESSION['phone'] ?></h2>
 
                         </div>
 
