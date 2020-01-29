@@ -1,4 +1,3 @@
-
 <?php
 $db_name="rtds1";
 $mysql_username="puppy";
@@ -12,23 +11,27 @@ if ($conn->connect_error) {
 }
 if(isset($_POST['Emlogin'])){
     $usr=mysqli_real_escape_string($conn,$_POST['Emlogin']);
-   $pass=mysqli_real_escape_string($conn,$_POST['Passlogin']);
- $emailvalid = "SELECT * FROM registration WHERE Email='$usr' AND Password= '$pass'";
+    $pass=mysqli_real_escape_string($conn,$_POST['Passlogin']);
+    $emailvalid = "SELECT * FROM registration WHERE Email='$usr' AND Password= '$pass'";
     $flagmail = mysqli_query($conn, $emailvalid);
     if(mysqli_num_rows($flagmail)>0){
-        
-          $flag=1;
-         echo $flag;
+
+        $flag=1;
+        echo $flag;
+
+        while($row = $flagmail->fetch_assoc()) {
+            echo "Name: " . $row["name"]. " - Email: " . $row["Email"].  "<br>";
+        }
 //         header("Location: http://34.68.249.249/reg12/loginwelcome.php");
     }
     else{
-          $flag=0;
-         echo $flag;
+        $flag=0;
+        echo $flag;
     }
 }
 else{
 
-echo("ERROR");
+    echo("ERROR");
 }
 
 
