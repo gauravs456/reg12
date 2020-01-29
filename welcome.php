@@ -17,10 +17,11 @@ if(isset($_POST['Emlogin'])){
     $flagmail = mysqli_query($conn, $emailvalid);
     if(mysqli_num_rows($flagmail)>0){
         
-        header("Location: http://34.68.249.249/reg12/loginwelcome.php");
+        echo "1";
+//         header("Location: http://34.68.249.249/reg12/loginwelcome.php");
     }
     else{
-        echo("Invalid username and password");
+        echo "0";
     }
 }
 else{
