@@ -84,6 +84,13 @@ include('welcome.php');
 </head>
 <body>
 
+<script>
+    function  redirect() {
+        
+        window.location.replace("http://34.68.249.249/reg12/index.php");
+    }
+</script>
+
 
 
 
@@ -95,7 +102,7 @@ include('welcome.php');
     <a href="#">Services</a>
     <a href="#">Clients</a>
     <a href="#">Contact</a>
-    <a href="http://34.68.249.249/reg12/logout.php" >Log Out</a>
+    <a href="#"  onclick="redirect();">Log Out</a>
 
 
 
