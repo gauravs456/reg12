@@ -8,7 +8,7 @@ $name="";
 $email="";
 $gender="";
 $phone="";
-
+session_start();
 
 $conn = new mysqli($server_name, $mysql_username, $mysql_password, $db_name);
 if ($conn->connect_error) {
@@ -25,6 +25,7 @@ if(isset($_POST['Emlogin'])){
         echo $flag;
 
         while($row = $flagmail->fetch_assoc()) {
+            $_SESSION['name']=$name;
             $name=$row["name"];
             $gender=$row["gender"];
             $email=$row["email"];
