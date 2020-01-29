@@ -63,7 +63,7 @@
 
         $(document).ready(function(){
             $('#loginbtn').onclick(function(){
-
+                alert("HELLO");
                 var Emailogin = document.getElementById("Emlogin");
                 var passlogin  =document.getElementById("Passlogin");
                 alert(Emailogin);
