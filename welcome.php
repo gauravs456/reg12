@@ -32,7 +32,7 @@ if(isset($_POST['Emlogin'])){
             $_SESSION['postal']=$postalcode;
 //             echo "Name: " . $row["name"]. " - Email: " . $row["email"].  "<br>";
         }
-    
+    echo  $_SESSION['name'];
      
         
         //         header("Location: http://34.68.249.249/reg12/loginwelcome.php");
