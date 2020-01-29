@@ -54,11 +54,6 @@
         });
     </script>
 
-
-
-
-
-
     <script>
 
         $(document).ready(function(){
@@ -326,7 +321,7 @@
                 <input type="password" class="input" id="Passlogin" name="Passlogin"  required >
             </div>
             <div class="inputfield">
-                <input type="Button   id="loginbtn" value="Login" name="loginbtn" class="btn">
+                <input type="Button"   id="loginbtn" value="Login" name="loginbtn" class="btn">
             </div>
         </form>
 
