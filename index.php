@@ -101,6 +101,16 @@
 
 </head>
 <body>
+	
+	 <script>
+      $(document).ready(function() {
+         function disablePrev() { window.history.forward() }
+         window.onload = disablePrev();
+         window.onpageshow = function(evt) { if (evt.persisted) disableBack() }
+      });
+   </script>
+	
+	
 <script type="text/javascript">
     function validate() {
         if(nameflag==true && passwordflag==true&& phoneflag==true&& postalflag==true && emailflag==true){
