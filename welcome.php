@@ -33,6 +33,7 @@ if(isset($_POST['Emlogin'])){
 //             echo "Name: " . $row["name"]. " - Email: " . $row["email"].  "<br>";
         }
     echo  $_SESSION['name'];
+        echo "hi";
      
         
         //         header("Location: http://34.68.249.249/reg12/loginwelcome.php");
