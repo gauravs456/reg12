@@ -86,8 +86,7 @@
 
                             }
                             else{
-                                validateflag=data;
-                                $('#availability').html('<p style="color:green"> Available</p>');
+                               alert("HEHE");
                             }
                         }
 
