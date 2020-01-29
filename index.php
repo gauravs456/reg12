@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<script>
-		window.history.forward()
-	</script>
+	
 	
 
     <meta charset="UTF-8">
