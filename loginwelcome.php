@@ -86,7 +86,7 @@ include('welcome.php');
 
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <h2  style="margin-left: 10%;color: #f1f1f1" id="profilename" >NAME</h2>
+    <h2  style="margin-left: 10%;color: #f1f1f1" id="profilename" ><?php echo  $_SESSION['name'] ?></h2>
     <hr>
     <a href="#">About</a>
     <a href="#">Services</a>
