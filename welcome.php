@@ -25,7 +25,7 @@ if(isset($_POST['Emlogin'])){
         echo $flag;
 
         while($row = $flagmail->fetch_assoc()) {
-            $_SESSION['name']=$name;
+            $_SESSION['name']=$row["name"];
              $_SESSION['gender']=$gender;
              $_SESSION['email']=$email;
              $_SESSION['phone']=$phone;
