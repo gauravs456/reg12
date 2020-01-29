@@ -44,7 +44,7 @@ if(isset($_POST['Emlogin'])){
 }
 else{
 
-    echo("ERROR");
+  
 }
 
 
