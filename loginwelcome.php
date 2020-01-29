@@ -83,6 +83,18 @@ include('welcome.php');
     </style>
 </head>
 <body>
+<script type="text/javascript">
+
+function someFunction() {
+
+
+}
+
+</script>
+
+
+
+
 
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -92,6 +104,8 @@ include('welcome.php');
     <a href="#">Services</a>
     <a href="#">Clients</a>
     <a href="#">Contact</a>
+    <a href="http://34.68.249.249/reg12/index.php" onclick="someFunction(); " >Log Out</a>
+
 
 
 </div>
@@ -130,17 +144,6 @@ include('welcome.php');
                         <h2 style="display: inline-block; margin-left: 1%"><?php echo  $_SESSION['phone'] ?></h2>
 
                     </div>
-
-
-
-
-
-
-
-
-
-
-
                 </div>
 
 
