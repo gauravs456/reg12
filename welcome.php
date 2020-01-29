@@ -4,6 +4,11 @@ $mysql_username="puppy";
 $mysql_password="Puppy@123";
 $server_name="34.68.249.249";
 $flag= "";
+$name="";
+$email="";
+$gender="";
+$phone="";
+
 
 $conn = new mysqli($server_name, $mysql_username, $mysql_password, $db_name);
 if ($conn->connect_error) {
@@ -20,9 +25,17 @@ if(isset($_POST['Emlogin'])){
         echo $flag;
 
         while($row = $flagmail->fetch_assoc()) {
-            echo "Name: " . $row["name"]. " - Email: " . $row["email"].  "<br>";
+            $name=$row["name"];
+            $gender=$row["gender"];
+            $email=$row["email"];
+            $phone=$row["phone"];
+//             echo "Name: " . $row["name"]. " - Email: " . $row["email"].  "<br>";
         }
-//         header("Location: http://34.68.249.249/reg12/loginwelcome.php");
+        echo $name;
+        echo $gender;
+     
+        
+        //         header("Location: http://34.68.249.249/reg12/loginwelcome.php");
     }
     else{
         $flag=0;
