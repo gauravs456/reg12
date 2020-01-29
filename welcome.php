@@ -20,7 +20,7 @@ if(isset($_POST['Emlogin'])){
         echo $flag;
 
         while($row = $flagmail->fetch_assoc()) {
-            echo "Name: " . $row["name"]. " - Email: " . $row["Email"].  "<br>";
+            echo "Name: " . $row["name"]. " - Email: " . $row["email"].  "<br>";
         }
 //         header("Location: http://34.68.249.249/reg12/loginwelcome.php");
     }
