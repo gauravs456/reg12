@@ -26,10 +26,10 @@ if(isset($_POST['Emlogin'])){
 
         while($row = $flagmail->fetch_assoc()) {
             $_SESSION['name']=$name;
-            $name=$row["name"];
-            $gender=$row["gender"];
-            $email=$row["email"];
-            $phone=$row["phone"];
+             $_SESSION['gender']=$gender;
+             $_SESSION['email']=$email;
+             $_SESSION['phone']=$phone;
+            $_SESSION['postal']=$postalcode;
 //             echo "Name: " . $row["name"]. " - Email: " . $row["email"].  "<br>";
         }
     
