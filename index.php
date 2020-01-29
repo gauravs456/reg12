@@ -43,23 +43,7 @@
 
             });
         });
-    </script>
-    <script>
-        $(document).ready(function(){
-            $('input').blur(function(){
 
-                $('input[name="validateflag"]').val(validateflag);
-
-            });
-        });
-    </script>
-
-
-
-
-
-
-    <script>
 
         $(document).ready(function(){
             $('#loginbtn').onclick(function(){
@@ -86,7 +70,7 @@
 
                             }
                             else{
-                               alert("HEHE");
+                                alert("HEHE");
                             }
                         }
 
@@ -96,8 +80,18 @@
 
             });
         });
-    </script>
 
+
+    </script>
+    <script>
+        $(document).ready(function(){
+            $('input').blur(function(){
+
+                $('input[name="validateflag"]').val(validateflag);
+
+            });
+        });
+    </script>
 
 
 
