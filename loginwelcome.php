@@ -106,7 +106,7 @@ include('welcome.php');
         <div class="rectangle">
             <div class="inputfield">
                 <label>Name</label>
-                <h2 style="display: inline-block; margin-left: 2%">xcv</h2>
+                <h2 style="display: inline-block; margin-left: 2%"><?php echo $_session["name"]; ?></h2>
 
             </div>
 
