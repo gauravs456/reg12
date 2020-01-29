@@ -45,42 +45,7 @@
         });
 
 
-        $(document).ready(function(){
-            $('#loginbtn').onclick(function(){
-                alert("HELLO");
-                var Emailogin = document.getElementById("Emlogin");
-                var passlogin  =document.getElementById("Passlogin");
-                alert(Emailogin);
-                alert(passlogin;
-
-
-                $.ajax({
-
-                    url:'http://34.68.249.249/reg12//emailcheck.php',
-                    method:"POST",
-                    data:{Email:Email},
-                    success:function(data)
-                    {
-
-                        if(emailflag==true){
-                            if(data==1){
-                                validateflag=data;
-
-                                $('#availability').html('<p style="color:red "  >Email Id already Exist</p>');
-
-                            }
-                            else{
-                                alert("HEHE");
-                            }
-                        }
-
-
-                    }
-                })
-
-            });
-        });
-
+    
 
     </script>
     <script>
