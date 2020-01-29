@@ -86,10 +86,14 @@
         });
     </script>
 
-
+<SCRIPT type="text/javascript">
+	window.history.forward();
+	function noBack() { window.history.forward(); }
+</SCRIPT>
 
 </head>
-<body>
+<body  onload="noBack();" 
+	onpageshow="if (event.persisted) noBack();" onunload="">
 <script type="text/javascript">
     function validate() {
         if(nameflag==true && passwordflag==true&& phoneflag==true&& postalflag==true && emailflag==true){
