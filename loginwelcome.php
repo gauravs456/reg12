@@ -96,7 +96,7 @@ include('welcome.php');
 
 </div>
 <div id="main">
-    <h2 class="upperhead">Hello sir</h2>
+    <h2 class="upperhead">Hello <?php echo  $_SESSION['name'] ?></h2>
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
     <hr>
     <h2  class="headingfont" style="margin-top: 1% ">Overview</h2>
