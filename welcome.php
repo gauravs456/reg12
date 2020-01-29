@@ -31,8 +31,7 @@ if(isset($_POST['Emlogin'])){
             $phone=$row["phone"];
 //             echo "Name: " . $row["name"]. " - Email: " . $row["email"].  "<br>";
         }
-        echo $name;
-        echo $gender;
+    
      
         
         //         header("Location: http://34.68.249.249/reg12/loginwelcome.php");
