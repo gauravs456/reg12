@@ -98,16 +98,6 @@
 	
 <script type="text/javascript">
 	
-	$(document).ready(function() {
-function disableBack() { window.history.forward() }
-
-window.onload = disableBack();
-window.onpageshow = function(evt) { if (evt.persisted) disableBack() }
-});
-	
-	
-	
-	
     function validate() {
         if(nameflag==true && passwordflag==true&& phoneflag==true&& postalflag==true && emailflag==true){
 
