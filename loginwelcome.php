@@ -100,14 +100,14 @@ include('welcome.php');
         <div class="rectangle">
             <div class="inputfield">
                 <label>Name</label>
-                <h2 style="display: inline-block; margin-left: 2%"><?php  echo  $_SESSION['name'] ?></h2>
+                <h2 style="display: inline-block; margin-left: 2%">fgh</h2>
 
             </div>
 
             <div class="rectangle">
                 <div class="inputfield">
                     <label>Gender</label>
-                    <h2 style="display: inline-block; margin-left: 2%"><?php  echo  $_SESSION['gender'] ?></h2>
+                    <h2 style="display: inline-block; margin-left: 2%">gj</h2>
 
                 </div>
 
