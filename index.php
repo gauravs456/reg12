@@ -72,7 +72,7 @@
                         }
                         else
                         {
-                            alert("Sorry Already Registered");
+                            alert("Sorry invalid username or password");
                         }
 
  
