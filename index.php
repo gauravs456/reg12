@@ -43,22 +43,7 @@
 
             });
         });
-<<<<<<< HEAD
-    </script>
-    <script>
-        $(document).ready(function(){
-            $('input').blur(function(){
 
-                $('input[name="validateflag"]').val(validateflag);
-
-            });
-        });
-    </script>
-
-    <script>
-=======
-
->>>>>>> 89605ddc694e5f9c1b45e139892762faa1bab246
 
         $(document).ready(function(){
             $('#loginbtn').onclick(function(){
@@ -335,11 +320,7 @@
                 <input type="password" class="input" id="Passlogin" name="Passlogin"  required >
             </div>
             <div class="inputfield">
-<<<<<<< HEAD
-                <input type="Button"   id="loginbtn" value="Login" name="loginbtn" class="btn">
-=======
                 <input type="Button"  id="loginbtn" value="Login" name="loginbtn" class="btn">
->>>>>>> 89605ddc694e5f9c1b45e139892762faa1bab246
             </div>
         </form>
 
