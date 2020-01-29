@@ -86,10 +86,9 @@
         });
     </script>
 
-<SCRIPT type="text/javascript">
-	window.history.forward();
-	function noBack() { window.history.forward(); }
-</SCRIPT>
+
+	
+
 
 </head>
 <body  onload="noBack();" 
@@ -237,6 +236,11 @@
 
         }
     }
+	
+	
+	function noBack() { window.history.forward(); }
+	
+	
     function submit(){
         var pass=document.getElementById('Name').value;
         var email=document.getElementById('Email').value;
