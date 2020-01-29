@@ -44,7 +44,7 @@ include('welcome.php');
             font-size: 36px;
             margin-left: 50px;
         }
-        
+
         .headingfont{
             color: dimgrey;
         }
@@ -52,7 +52,7 @@ include('welcome.php');
 
         .upperhead{
             float: right;
-           margin: auto;
+            margin: auto;
 
         }
 
@@ -62,13 +62,13 @@ include('welcome.php');
             background: rgba(122, 120, 127, 0.31);
             border-radius: 10px;
         }
-.inputfield{
-   margin-left: 2%;
-}
+        .inputfield{
+            margin-left: 2%;
+        }
 
-.rectangle{
-    background: white;
-}
+        .rectangle{
+            background: white;
+        }
 
 
         #main {
@@ -98,38 +98,39 @@ include('welcome.php');
 <div id="main">
     <h2 class="upperhead">Hello sir</h2>
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
-        <hr>
+    <hr>
     <h2  class="headingfont" style="margin-top: 1% ">Overview</h2>
 
 
 
+    <div class="rectangle">
+        <div class="inputfield">
+            <label>Name</label>
+            <h2 style="display: inline-block; margin-left: 1%"><?php echo  $_SESSION['name'] ?></h2>
+
+        </div>
+
         <div class="rectangle">
             <div class="inputfield">
-                <label>Name</label>
-                <h2 style="display: inline-block; margin-left: 2%"><?php echo  $_SESSION['name'] ?></h2>
+                <label>Gender</label>
+                <h2 style="display: inline-block; margin-left: 1%"><?php echo  $_SESSION['gender'] ?></h2>
 
             </div>
 
             <div class="rectangle">
                 <div class="inputfield">
-                    <label>Gender</label>
-                    <h2 style="display: inline-block; margin-left: 2%"><?php echo  $_SESSION['gender'] ?></h2>
+                    <label>Email Address</label>
+                    <h2 style="display: inline-block; margin-left: 1%"><?php echo  $_SESSION['email'] ?></h2>
 
                 </div>
 
                 <div class="rectangle">
                     <div class="inputfield">
-                        <label>Email Address</label>
-                        <h2 style="display: inline-block; margin-left: 2%"><?php echo  $_SESSION['email'] ?></h2>
+                        <label>Phone</label>
+                        <h2 style="display: inline-block; margin-left: 1%"><?php echo  $_SESSION['phone'] ?></h2>
 
                     </div>
 
-                    <div class="rectangle">
-                        <div class="inputfield">
-                            <label>Phone</label>
-                            <h2 style="display: inline-block; margin-left: 2%"><?php echo  $_SESSION['phone'] ?></h2>
-
-                        </div>
 
 
 
@@ -140,28 +141,27 @@ include('welcome.php');
 
 
 
-
-    </div>
-
+                </div>
 
 
-</div>
 
+            </div>
 
 
 
 
-<script>
-    function openNav() {
-        document.getElementById("mySidenav").style.width = "250px";
-        document.getElementById("main").style.marginLeft = "250px";
-    }
 
-    function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-        document.getElementById("main").style.marginLeft= "0";
-    }
-</script>
+            <script>
+                function openNav() {
+                    document.getElementById("mySidenav").style.width = "250px";
+                    document.getElementById("main").style.marginLeft = "250px";
+                }
+
+                function closeNav() {
+                    document.getElementById("mySidenav").style.width = "0";
+                    document.getElementById("main").style.marginLeft= "0";
+                }
+            </script>
 
 </body>
 </html>
