@@ -43,7 +43,7 @@ if(isset($_POST['validateflag'])){
 }
 
 
-echo "$usr1";
+echo "$usrl1";
 
 
 
@@ -66,7 +66,7 @@ if(($usr11==0)  && !empty($name)  ){
 }
 else{
     echo("Coud not register");
-echo ($validateflag);
+echo ($usrl1);
 
 
 }
