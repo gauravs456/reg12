@@ -1,109 +1,343 @@
-<?php
-
- $db_name="rtds1";
-    $mysql_username="puppy";
-    $mysql_password="Puppy@123";
-    $server_name="34.68.249.249";
-     
- 
-$conn = new mysqli($server_name, $mysql_username, $mysql_password, $db_name);
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
 
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-if(isset($_POST['Name'])){
-    $name=mysqli_real_escape_string($conn,$_POST['Name']);
-}
-if(isset($_POST['Gender'])){
-    $gender=mysqli_real_escape_string($conn,$_POST['Gender']);
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="styles.css">
 
-}
-if(isset($_POST['Phone'])){
-    $phone=mysqli_real_escape_string($conn,$_POST['Phone']);
-}
-if(isset($_POST['PostalCode'])){
-    $postalcode=mysqli_real_escape_string($conn,$_POST['PostalCode']);
-}
-if(isset($_POST['Password'])){
-    $password=mysqli_real_escape_string($conn,$_POST['Password']);
-}
- 
-if(isset($_POST['Email'])){
-    $usr=mysqli_real_escape_string($conn,$_POST['Email']);
-}
 
-if(isset($_POST['validateflag'])){
-    $usr11=mysqli_real_escape_string($conn,$_POST['validateflag']);
 
-   
-}
-if(isset($_POST['Email'])){
-    $usr=mysqli_real_escape_string($conn,$_POST['Email']);
-$emailvalid = "SELECT * FROM registration WHERE Email='$usr'";
-    $flagmail = mysqli_query($conn, $emailvalid);
-    if(mysqli_num_rows($flagmail)>0){
-        echo("Sorry Already Registerd");
+
+
+    <script>
+        var validateflag="";
+        $('#validateflag').val("Gee");
+        $(document).ready(function(){
+            $('#Email').keyup(function(){
+                var Email = $(this).val();
+                $.ajax({
+                    url:'http://34.68.249.249/reg12//emailcheck.php',
+                    method:"POST",
+                    data:{Email:Email},
+                    success:function(data)
+                    {
+                        if(emailflag==true){
+                            if(data==1){
+                                validateflag=data;
+                                $('#availability').html('<p style="color:red "  >Email Id already Exist</p>');
+                            }
+                            else{
+                                validateflag=0;
+                                $('#availability').html('<p style="color:green"> Available</p>');
+                            }
+                        }
+                    }
+                })
+            });
+        });
+        $(document).ready(function(){
+            $("#loginbtn").click(function(){
+
+                var loginem=document.getElementById("Emlogin").value;
+                var loginpass=document.getElementById("Passlogin").value;
+//                alert(loginem);
+//                alert(loginpass);
+                $.ajax({
+                    url: 'http://34.68.249.249/reg12//welcome.php',
+                    method:"POST",
+                    data: {Emlogin:loginem, Passlogin : loginpass},
+                    success: function(result){
+                        if(result==1){
+                            window.location.href = 'http://34.68.249.249/reg12/loginwelcome.php';
+                        }
+                        else
+                        {
+                            alert("Sorry invalid username or password");
+                        }
+
+                    }
+                });
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function(){
+            $('input').blur(function(){
+                $('input[name="validateflag"]').val(validateflag);
+            });
+        });
+    </script>
+
+
+</head>
+<body>
+
+
+
+
+<script type="text/javascript">
+
+    function validate() {
+        if(nameflag==true && passwordflag==true&& phoneflag==true&& postalflag==true && emailflag==true){
+            return true;
+        }
+        else{
+            return false;
+        }
+       
     }
-    else{
-         $sql = "INSERT INTO registration(name,gender,email,phone,postalcode,password) VALUES ('$name','$gender','$usr','$phone','$postalcode','$password')";
 
-            if (mysqli_query($conn, $sql)) {
-            $json = json_encode("Success");
-              echo '<script>alert("Redirecting to Homepage")</script>';  
-             
-             header("Location: http://34.68.249.249/reg12/index.php");
-            } else {
-              echo "Error: " . $sql . "" . mysqli_error($conn);
-            }
-        
-     
-     
-     
-     
+    var emailloginflag;
+    
+     function  loginvaldiate() {
+
+        if(emailloginflag==true){
+            return true;
+        }
+        else {
+            return false;
+        }
+
+     }
+
+//    var checkpasslogin = function() {
+//        if(document.getElementById('Passlogin').value.length<6){
+//            document.getElementById('Passlogin').style.color = 'red';
+//            document.getElementById('Passlogin').style.borderColor = "red";
+//            passloginflag=false;
+//        }
+//        else {
+//            passloginflag=false;
+//            document.getElementById('Passlogin').style.color = 'red';
+//            document.getElementById('Passlogin').style.borderColor = "red";
+//
+//        }
+//    }
+//
+
+    var emailflag;
+    var nameflag;
+    var phoneflag;
+    var passwordflag;
+    var confirmpasswordflag;
+    var postalflag;
+    function Gender(){
+        var e = document.getElementById("Gender");
+        var strUser = e.options[e.selectedIndex].value;
+        alert(strUser);
     }
-   
-}
+    function nameval(name){
+        var reg = /^([a-zA-Z]{3,30}\s*)+$/;
+        if (reg.test(name) == false)
+        {
+            nameflag=false;
+            document.getElementById('Name').style.color = 'red';
+            document.getElementById('Name').style.borderColor = "red";
+        }
+        else{
+            nameflag=true;
+            document.getElementById('Name').style.color = 'green';
+            document.getElementById('Name').style.borderColor = "green";
+        }
+    }
+    function emailval(emailid){
+        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+        if (reg.test(emailid) == false)
+        {
+            document.getElementById('Email').style.color = 'red';
+            document.getElementById('Email').style.borderColor = "red";
+            emailflag=false;
+        }
+        else{
+            emailflag=true;
+            document.getElementById('Email').style.color = 'green';
+            document.getElementById('Email').style.borderColor = "green";
+        }
+    }
+    function emailvallogin(emailid){
+        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+        if (reg.test(emailid) == false)
+        {
+            document.getElementById('Emlogin').style.color = 'red';
+            document.getElementById('Emlogin').style.borderColor = "red";
+            emailloginflag=false;
+        }
+        else{
+            emailloginflag=true;
+            document.getElementById('Emlogin').style.color = 'green';
+            document.getElementById('Emlogin').style.borderColor = "green";
+        }
+    }
+    var check = function() {
+        var x= document.getElementById('Password').value;
+        var y=document.getElementById('ConfirmPassword').value;
+        if(document.getElementById('Password').value.length<6){
+            document.getElementById('Password').style.color = 'red';
+            document.getElementById('ConfirmPassword').style.color = 'red';
+            document.getElementById('ConfirmPassword').style.borderColor = "red";
+            document.getElementById('Password').style.borderColor = "red";
+            passwordflag=false;
+        }
+        else if (document.getElementById('Password').value ==
+            document.getElementById('ConfirmPassword').value ) {
+            passwordflag=true;
+            document.getElementById('Password').style.color = 'green';
+            document.getElementById('ConfirmPassword').style.color = 'green';
+            document.getElementById('ConfirmPassword').style.borderColor = "green";
+            document.getElementById('Password').style.borderColor = "green";
+        }
+        else {
+            passwordflag=false;
+            document.getElementById('Password').style.color = 'red';
+            document.getElementById('ConfirmPassword').style.color = 'red';
+            document.getElementById('Password').style.borderColor = "red";
+            document.getElementById('ConfirmPassword').style.borderColor = "red";
+        }
+    }
+    function isNumber(evt) {
+        var iKeyCode = (evt.which) ? evt.which : evt.keyCode
+        if (iKeyCode != 46 && iKeyCode > 31 && (iKeyCode < 48 || iKeyCode > 57))
+            return false;
+        return true;
+    }
+    function phoneval(phone){
+        var reg = /^([0|\+[0-9]{1,5})?([7-9][0-9]{9})$/;
+        if(reg.test(phone) == false){
+            document.getElementById('Phone').style.color = 'red';
+            document.getElementById('Phone').style.borderColor = "red";
+            phoneflag=false;
+        }
+        else{
+            phoneflag=true;
+            document.getElementById('Phone').style.color = 'green';
+            document.getElementById('Phone').style.borderColor = "green";
+        }
+    }
+    function postal(postal){
+        if(postal.length==6){
+            document.getElementById('PostalCode').style.color = 'green';
+            document.getElementById('PostalCode').style.borderColor = "green";
+            postalflag=true;
+        }
+        else{
+            postalflag=false;
+            document.getElementById('PostalCode').style.color = 'red';
+            document.getElementById('PostalCode').style.borderColor = "red";
+        }
+    }
 
 
-   $conn->close();
 
 
-
-
-
-// if(($usr11==0)  && !empty($name)  ){
-    
-// $_POST['validateflag']=1;
- 
-//  $usrl1=1;
- 
-//         $sql = "INSERT INTO registration(name,gender,email,phone,postalcode,password) VALUES ('$name','$gender','$usr','$phone','$postalcode','$password')";
-
-//             if (mysqli_query($conn, $sql)) {
-//             $json = json_encode("Success");
-//               echo("SUCCESS");
-//              echo ($usrl1);
-             
-
-           
-               
-//             } else {
-//               echo "Error: " . $sql . "" . mysqli_error($conn);
-//             }
-        
-    
-// }
-// else{
-//     echo("Coud not register");
-
-
-
-// }
-
-         
-
-?>
-
-
+//
+//    function submit(){
+//        var pass=document.getElementById('Name').value;
+//        var email=document.getElementById('Email').value;
+//        var pass=document.getElementById('Password').value;
+//        var confirmpass=document.getElementById('ConfirmPassword').value;
+//        var phone=document.getElementById('Phone').value;
+//        if(nameflag==true && passwordflag==true&& phoneflag==true&& postalflag==true && emailflag==true){
+//        }
+//        else{
+//        }
+//    }
+    var formType = 0;
+    function formToggle() {
+        // flip function for formType value
+        formType++;
+        formType = formType % 2;
+        // If it's a signup form
+        if (formType === 1) {
+            // Hide login elements
+            $("#signup").slideDown(250);
+            // Show signup elements
+            $("#login_form").slideUp(250);
+            var elem = document.getElementById("reg");
+            elem.value="Login";
+            document.getElementById("up").innerHTML="Registration Form";
+        }
+        // If it's a login form
+        if (formType === 0) {
+            // Hide signup elements
+            $("#signup").slideUp(250);
+            var elem = document.getElementById("reg");
+            elem.value="Register";
+            document.getElementById("up").innerHTML="Login Form";
+            // Show Login elements
+            $('#login_form').slideDown(250);
+        }
+    };
+</script>
+<div class="wrapper" id="contain">
+    <div  class="title">
+        <h3 id="up" class="title">Login Form<h3>
+    </div>
+    <div class="form">
+        <form id="login_form"   name="login_form" method="post" action="http://34.68.249.249/reg12/welcome.php" onsubmit= "return(loginvaldiate());" >
+            <div class="inputfield">
+                <label>Email Address</label>
+                <input type="text" class="input" id="Emlogin" autocomplete="off" name="Emlogin"  onkeyup="emailvallogin(this.value);" required>
+            </div>
+            <div class="inputfield">
+                <label>Password</label>
+                <input type="password" class="input" id="Passlogin" name="Passlogin"  required >
+            </div>
+            <div class="inputfield">
+                <input type="Button"  id="loginbtn" value="Login" name="loginbtn" class="btn">
+            </div>
+        </form>
+        <form id="signup" action = "http://34.68.249.249/reg12/Register.php" method="post" name = "myForm" onsubmit = "return(validate());">
+            <div class="inputfield">
+                <input type='hidden' id='validateflag' name='validateflag' >
+                <label>Name</label>
+                <input type="text" class="input" id="Name" name="Name" onkeyup="nameval(this.value)">
+                <h3 id="show"></h3>
+            </div>
+            <div class="inputfield">
+                <label>Gender</label>
+                <div class="custom_select" >
+                    <select name="Gender" id="Gender" name="Gender" onchange="Gender();" >
+                        <option value="">Select</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+            </div>
+            <div class="inputfield">
+                <label>Email Address</label>
+                <input type="text" class="input" id="Email" autocomplete="off" name="Email"  onkeyup="emailval(this.value);" required>
+            </div>
+            <p id="availability"></p>
+            <div class="inputfield">
+                <label>Phone Number</label>
+                <input type="text" maxlength="10" class="input" id="Phone"  name="Phone" onkeyup="phoneval(this.value);"  onkeypress="javascript:return isNumber(event)" required>
+            </div>
+            <div class="inputfield">
+                <label>Postal Code</label>
+                <input type="text" class="input" id="PostalCode"  name="PostalCode" onkeyup="postal(this.value);">
+            </div>
+            <div class="inputfield">
+                <label>Password</label>
+                <input type="password" class="input" id="Password"  onkeyup='check();' name="Password"  required >
+            </div>
+            <div class="inputfield">
+                <label>Confirm Password</label>
+                <input type="password" class="input" id="ConfirmPassword" name="ConfirmPassword" onkeyup='check();' required>
+            </div>
+            <div class="inputfield">
+                <input type="submit"  id="button" value="submit" class="btn">
+            </div>
+        </form>
+        <div class="inputfield">
+            <input type="Button"  id="reg" value="Register" onclick="formToggle();" class="btn">
+        </div>
+    </div>
+</div>
+</body>
+</html>
