@@ -14,7 +14,7 @@ include('welcome.php');
         function myready() {
 
 
-            .ajax({
+            $.ajax({
                 url: 'http://34.68.249.249/reg12//logour.php',
                 method: "POST",
                 success: function (result) {
@@ -132,7 +132,7 @@ include('welcome.php');
     <a href="#">Services</a>
     <a href="#">Clients</a>
     <a href="#">Contact</a>
-    <a  onclick="myready()">logout</a>
+    <a  onclick="myready();">logout</a>
 
 
 
