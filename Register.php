@@ -39,25 +39,21 @@ if(isset($_POST['validateflag'])){
 
    
 }
-
+if(isset($_POST['Email'])){
+    $usr=mysqli_real_escape_string($conn,$_POST['Email']);
 $emailvalid = "SELECT * FROM registration WHERE Email='$usr'";
     $flagmail = mysqli_query($conn, $emailvalid);
     if(mysqli_num_rows($flagmail)>0){
-     echo ("Sorry Could Not register");
-     echo ("retre"); 
+        $flag=1;
+         echo $flag;
     }
     else{
-     
-     $sql = "INSERT INTO registration(name,gender,email,phone,postalcode,password) VALUES ('$name','$gender','$usr','$phone','$postalcode','$password')";
-
-            if (mysqli_query($conn, $sql)) {
-            $json = json_encode("Success");
-              echo("SUCCESS");
-            } else {
-              echo "Error: " . $sql . "" . mysqli_error($conn);
-            }
-        
+        $flag=0;
+        echo $flag;
     }
+   
+}
+
 
    $conn->close();
 
