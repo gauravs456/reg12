@@ -17,6 +17,7 @@ if ($conn->connect_error) {
 if(isset($_POST['Emlogin'])){
     $usr=mysqli_real_escape_string($conn,$_POST['Emlogin']);
     $pass=mysqli_real_escape_string($conn,$_POST['Passlogin']);
+       $pass = md5($pass);  
     $emailvalid = "SELECT * FROM registration WHERE Email='$usr' AND Password= '$pass'";
     $flagmail = mysqli_query($conn, $emailvalid);
     if(mysqli_num_rows($flagmail)>0){
