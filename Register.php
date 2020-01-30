@@ -44,7 +44,7 @@ if(isset($_POST['Email'])){
 $emailvalid = "SELECT * FROM registration WHERE Email='$usr'";
     $flagmail = mysqli_query($conn, $emailvalid);
     if(mysqli_num_rows($flagmail)>0){
-        echo("Sorry Already Registerd")
+        echo("Sorry Already Registerd");
     }
     else{
         $flag=0;
