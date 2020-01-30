@@ -39,35 +39,61 @@ if(isset($_POST['validateflag'])){
 
    
 }
-if(($usr11==0)  && !empty($name)  ){
+
+$emailvalid = "SELECT * FROM registration WHERE Email='$usr'";
+    $flagmail = mysqli_query($conn, $emailvalid);
+    if(mysqli_num_rows($flagmail)>0){
+     echo ("Sorry Could Not register");
     
-$_POST['validateflag']=1;
- 
- $usrl1=1;
- 
-        $sql = "INSERT INTO registration(name,gender,email,phone,postalcode,password) VALUES ('$name','$gender','$usr','$phone','$postalcode','$password')";
+    }
+    else{
+     
+     $sql = "INSERT INTO registration(name,gender,email,phone,postalcode,password) VALUES ('$name','$gender','$usr','$phone','$postalcode','$password')";
 
             if (mysqli_query($conn, $sql)) {
             $json = json_encode("Success");
               echo("SUCCESS");
-             echo ($usrl1);
-             
-
-           
-               
             } else {
               echo "Error: " . $sql . "" . mysqli_error($conn);
             }
         
+    }
+
+   $conn->close();
+
+
+
+
+
+// if(($usr11==0)  && !empty($name)  ){
     
-}
-else{
-    echo("Coud not register");
+// $_POST['validateflag']=1;
+ 
+//  $usrl1=1;
+ 
+//         $sql = "INSERT INTO registration(name,gender,email,phone,postalcode,password) VALUES ('$name','$gender','$usr','$phone','$postalcode','$password')";
+
+//             if (mysqli_query($conn, $sql)) {
+//             $json = json_encode("Success");
+//               echo("SUCCESS");
+//              echo ($usrl1);
+             
+
+           
+               
+//             } else {
+//               echo "Error: " . $sql . "" . mysqli_error($conn);
+//             }
+        
+    
+// }
+// else{
+//     echo("Coud not register");
 
 
 
-}
-$conn->close();
+// }
+
          
 
 ?>
