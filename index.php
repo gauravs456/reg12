@@ -39,7 +39,7 @@
 
                             }
                             else{
-                                validateflag=data;
+                                validateflag=0;
                                 $('#availability').html('<p style="color:green"> Available</p>');
                             }
                         }
