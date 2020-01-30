@@ -13,7 +13,7 @@ include('welcome.php');?>
 
 <body>
 <!-- Modal -->
-<div class="modal fade" id="studentaddmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="studentaddmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -54,7 +54,7 @@ include('welcome.php');?>
 
     </div>
   </div>
-</div>
+</div> -->
 
 
 
@@ -153,16 +153,16 @@ include('welcome.php');?>
 
 <div class="container">
     <div class="jumbotron">
-        <div class="card">
+        <!-- <div class="card">
             <h2> PHP CRUD Bootstrap MODAL (POP UP Modal) </h2>
-        </div>    
-        <div class="card">
+        </div>     -->
+        <!-- <div class="card">
             <div class="card-body">
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#studentaddmodal">
                     ADD DATA
                 </button>
             </div>
-        </div>
+        </div> -->
 
         <div class="card">
             <div class="card-body">
