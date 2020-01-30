@@ -7,6 +7,49 @@ include('welcome.php');
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <script>
+
+        $(document).ready(function(){
+            $("#logout").click(function(){
+                    $.ajax({
+                        url: 'http://34.68.249.249/reg12//logour.php',
+                        method:"POST",
+                        success: function(result){
+                            if(result==1){
+                                window.location.href = 'http://34.68.249.249/reg12/index.php';
+                            }
+                            else
+                            {
+
+                            }
+                        }
+                    });
+
+
+
+
+
+            });
+        });
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
     <style>
         body {
             font-family: "Lato", sans-serif;
@@ -84,16 +127,6 @@ include('welcome.php');
 </head>
 <body>
 
-<script>
-    function  redirect() {
-        
-        window.location.replace("http://34.68.249.249/reg12/index.php");
-    }
-</script>
-
-
-
-
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <h2  style="margin-left: 10%;color: #f1f1f1" id="profilename" ><?php echo  $_SESSION['name'] ?></h2>
@@ -102,7 +135,7 @@ include('welcome.php');
     <a href="#">Services</a>
     <a href="#">Clients</a>
     <a href="#">Contact</a>
-    <a href="#"  onclick="redirect();">Log Out</a>
+    <a href="#"  id="logout">Log Out</a>
 
 
 
@@ -166,4 +199,3 @@ include('welcome.php');
 
 </body>
 </html>
-
