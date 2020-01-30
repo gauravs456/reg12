@@ -10,44 +10,6 @@ include('welcome.php');
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <script>
-
-        function myready() {
-
-
-            .ajax({
-                url: 'http://34.68.249.249/reg12//logour.php',
-                method: "POST",
-                success: function (result) {
-                    if (result == 1) {
-                        window.location.href = 'http://34.68.249.249/reg12/index.php';
-                    } else {
-
-                    }
-                }
-            });
-
-
-        }
-
-
-
-
-
-
-
-    </script>
-
-
-
-
-
-
-
-
-
-
-
     <style>
         body {
             font-family: "Lato", sans-serif;
@@ -185,6 +147,26 @@ include('welcome.php');
 
 
             <script>
+                 
+                     function myready() {
+
+
+            $.ajax({
+                url: 'http://34.68.249.249/reg12//logour.php',
+                method: "POST",
+                success: function (result) {
+                    if (result == 1) {
+                        window.location.href = 'http://34.68.249.249/reg12/index.php';
+                    } else {
+
+                    }
+                }
+            });
+
+
+        }
+                 
+                 
                 function openNav() {
                     document.getElementById("mySidenav").style.width = "250px";
                     document.getElementById("main").style.marginLeft = "250px";
