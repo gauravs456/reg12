@@ -56,6 +56,7 @@ if(($usr11==0)  && !empty($name)  ){
             if (mysqli_query($conn, $sql)) {
             $json = json_encode("Success");
               echo("SUCCESS");
+             echo ($usrl1);
              
 
            
