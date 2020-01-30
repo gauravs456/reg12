@@ -152,7 +152,7 @@ include('welcome.php');
 
 
             $.ajax({
-                url: 'http://34.68.249.249/reg12//logour.php',
+                url: 'http://34.68.249.249/reg12//logout.php',
                 method: "POST",
                 success: function (result) {
                     if (result == 1) {
