@@ -14,7 +14,7 @@ include('welcome.php');
         function myready() {
 
 
-            $.ajax({
+            .ajax({
                 url: 'http://34.68.249.249/reg12//logour.php',
                 method: "POST",
                 success: function (result) {
