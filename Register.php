@@ -8,6 +8,7 @@
  
 $conn = new mysqli($server_name, $mysql_username, $mysql_password, $db_name);
 
+$temp=$_POST['validateflag'];
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -47,7 +48,7 @@ if(($usr11==0)  && !empty($name)  ){
             if (mysqli_query($conn, $sql)) {
             $json = json_encode("Success");
               echo("SUCCESS");
-             echo ($usrl1);
+             echo ($temp);
              
 
            
