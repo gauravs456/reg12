@@ -8,7 +8,7 @@
  
 $conn = new mysqli($server_name, $mysql_username, $mysql_password, $db_name);
 
-$temp=$_POST['validateflag'];
+$_POST['validateflag']=1;
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
