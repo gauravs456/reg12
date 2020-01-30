@@ -168,20 +168,26 @@ include('welcome.php');?>
             <div class="card-body">
 
             <?php
-                $connection = mysqli_connect("localhost","root","");
-                $db = mysqli_select_db($connection, 'phpcrud');
-
-                $query = "SELECT * FROM student";
-                $query_run = mysqli_query($connection, $query);
+               $db_name="rtds1";
+               $mysql_username="puppy";
+               $mysql_password="Puppy@123";
+               $server_name="34.68.249.249";
+               $conn = new mysqli($server_name, $mysql_username, $mysql_password, $db_name);
+               if ($conn->connect_error) {
+                   die("Connection failed: " . $conn->connect_error);
+               }
+               $sql = "SELECT * FROM registration";
+                $query_run = mysqli_query($conn, $sql);
             ?>
                 <table id="datatableid" class="table table-bordered table-dark">
                     <thead>
                         <tr>
                             <th scope="col"> ID</th>
-                            <th scope="col">First Name</th>
-                            <th scope="col">Last Name </th>
-                            <th scope="col"> Course </th>
-                            <th scope="col"> Contact </th>
+                            <th scope="col"> Name</th>
+                            <th scope="col">Gender </th>
+                            <th scope="col"> Email </th>
+                            <th scope="col"> Phone </th>
+                            <th scope="col"> PostalCode </th>
                             <th scope="col"> EDIT </th>
                             <th scope="col"> DELETE </th>
                         </tr>
@@ -195,10 +201,11 @@ include('welcome.php');?>
                     <tbody>
                         <tr>
                             <td> <?php echo $row['id']; ?> </td>                            
-                            <td> <?php echo $row['fname']; ?> </td>                            
-                            <td> <?php echo $row['lname']; ?> </td>                            
-                            <td> <?php echo $row['course']; ?> </td>                            
-                            <td> <?php echo $row['contact']; ?> </td>                            
+                            <td> <?php echo $row['name']; ?> </td>                            
+                            <td> <?php echo $row['gender']; ?> </td>                            
+                            <td> <?php echo $row['email']; ?> </td>                            
+                            <td> <?php echo $row['phone']; ?> </td> 
+                            <td> <?php echo $row['postalcode']; ?> </td>                                                       
                             <td> 
                                 <button type="button" class="btn btn-success editbtn"> EDIT </button>
                             </td> 
