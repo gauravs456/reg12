@@ -51,7 +51,9 @@ $emailvalid = "SELECT * FROM registration WHERE Email='$usr'";
 
             if (mysqli_query($conn, $sql)) {
             $json = json_encode("Success");
-              echo("SUCCESS");  
+              echo '<script>alert("Redirecting to Homepage")</script>';  
+             
+             header("Location: http://34.68.249.249/reg12/index.php");
             } else {
               echo "Error: " . $sql . "" . mysqli_error($conn);
             }
