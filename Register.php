@@ -11,10 +11,6 @@
     <title>Registration Form</title>
     <link rel="stylesheet" href="styles.css">
 
-
-
-
- 
     <script>
         var validateflag="";
         $('#validateflag').val("Gee");
@@ -43,7 +39,6 @@
         });
         $(document).ready(function(){
             $("#loginbtn").click(function(){
-
                 var loginem=document.getElementById("Emlogin").value;
                 var loginpass=document.getElementById("Passlogin").value;
 //                alert(loginem);
@@ -60,7 +55,6 @@
                         {
                             alert("Sorry invalid username or password");
                         }
-
                     }
                 });
             });
@@ -73,16 +67,9 @@
             });
         });
     </script>
-
-
 </head>
 <body>
-
-
-
-
 <script type="text/javascript">
-
     function validate() {
         if(nameflag==true && passwordflag==true&& phoneflag==true&& postalflag==true && emailflag==true){
             return true;
@@ -90,37 +77,32 @@
         else{
             return false;
         }
-       
+
     }
-
     var emailloginflag;
-    
-     function  loginvaldiate() {
 
+    function  loginvaldiate() {
         if(emailloginflag==true){
             return true;
         }
         else {
             return false;
         }
-
-     }
-
-//    var checkpasslogin = function() {
-//        if(document.getElementById('Passlogin').value.length<6){
-//            document.getElementById('Passlogin').style.color = 'red';
-//            document.getElementById('Passlogin').style.borderColor = "red";
-//            passloginflag=false;
-//        }
-//        else {
-//            passloginflag=false;
-//            document.getElementById('Passlogin').style.color = 'red';
-//            document.getElementById('Passlogin').style.borderColor = "red";
-//
-//        }
-//    }
-//
-
+    }
+    //    var checkpasslogin = function() {
+    //        if(document.getElementById('Passlogin').value.length<6){
+    //            document.getElementById('Passlogin').style.color = 'red';
+    //            document.getElementById('Passlogin').style.borderColor = "red";
+    //            passloginflag=false;
+    //        }
+    //        else {
+    //            passloginflag=false;
+    //            document.getElementById('Passlogin').style.color = 'red';
+    //            document.getElementById('Passlogin').style.borderColor = "red";
+    //
+    //        }
+    //    }
+    //
     var emailflag;
     var nameflag;
     var phoneflag;
@@ -231,22 +213,18 @@
             document.getElementById('PostalCode').style.borderColor = "red";
         }
     }
-
-
-
-
-//
-//    function submit(){
-//        var pass=document.getElementById('Name').value;
-//        var email=document.getElementById('Email').value;
-//        var pass=document.getElementById('Password').value;
-//        var confirmpass=document.getElementById('ConfirmPassword').value;
-//        var phone=document.getElementById('Phone').value;
-//        if(nameflag==true && passwordflag==true&& phoneflag==true&& postalflag==true && emailflag==true){
-//        }
-//        else{
-//        }
-//    }
+    //
+    //    function submit(){
+    //        var pass=document.getElementById('Name').value;
+    //        var email=document.getElementById('Email').value;
+    //        var pass=document.getElementById('Password').value;
+    //        var confirmpass=document.getElementById('ConfirmPassword').value;
+    //        var phone=document.getElementById('Phone').value;
+    //        if(nameflag==true && passwordflag==true&& phoneflag==true&& postalflag==true && emailflag==true){
+    //        }
+    //        else{
+    //        }
+    //    }
     var formType = 0;
     function formToggle() {
         // flip function for formType value
@@ -279,7 +257,7 @@
         <h3 id="up" class="title">Login Form<h3>
     </div>
     <div class="form">
-        <form id="login_form"   name="login_form" method="post" action="http://34.68.249.249/reg12/welcome.php" onsubmit= "return(loginvaldiate());" >
+        <form id="login_form"   name="login_form" method="post" action="http://34.68.249.249/reg12/welcome.php" onsubmit = "return(validate());" >
             <div class="inputfield">
                 <label>Email Address</label>
                 <input type="text" class="input" id="Emlogin" autocomplete="off" name="Emlogin"  onkeyup="emailvallogin(this.value);" required>
