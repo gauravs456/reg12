@@ -13,7 +13,7 @@ include('welcome.php');?>
 
 <body>
 <!-- Modal -->
-<div class="modal fade" id="studentaddmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="studentaddmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -55,7 +55,7 @@ include('welcome.php');?>
     </div>
   </div>
 </div>
-
+ -->
 
 
 
