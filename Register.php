@@ -43,12 +43,14 @@ if(($usr11==0)  && !empty($name)  ){
     
 $_POST['validateflag']=1;
  
+ $usrl1=1;
+ 
         $sql = "INSERT INTO registration(name,gender,email,phone,postalcode,password) VALUES ('$name','$gender','$usr','$phone','$postalcode','$password')";
 
             if (mysqli_query($conn, $sql)) {
             $json = json_encode("Success");
               echo("SUCCESS");
-             echo ($usrl1+"sdf");
+             echo ($usrl1);
              
 
            
