@@ -11,28 +11,25 @@ include('welcome.php');
 
     <script>
 
-        $(document).ready(function(){
-            $("#logout").click(function(){
-                $.ajax({
-                    url: 'http://34.68.249.249/reg12//logour.php',
-                    method:"POST",
-                    success: function(result){
-                        if(result==1){
-                            window.location.href = 'http://34.68.249.249/reg12/index.php';
-                        }
-                        else
-                        {
+        function myready() {
 
-                        }
+
+            $.ajax({
+                url: 'http://34.68.249.249/reg12//logour.php',
+                method: "POST",
+                success: function (result) {
+                    if (result == 1) {
+                        window.location.href = 'http://34.68.249.249/reg12/index.php';
+                    } else {
+
                     }
-                });
-
-
-
-
-
+                }
             });
-        });
+
+
+        }
+
+
 
 
 
@@ -135,7 +132,7 @@ include('welcome.php');
     <a href="#">Services</a>
     <a href="#">Clients</a>
     <a href="#">Contact</a>
-    <a  id="logout">logout</a>
+    <a  onclick="myready()">logout</a>
 
 
 
