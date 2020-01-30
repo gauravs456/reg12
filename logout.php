@@ -11,13 +11,13 @@ if ($conn->connect_error) {
 }
 session_start();
 session_destroy();
-echo $flag=1;
+echo 1;
 
 
-header("Cache-Control: private, must-revalidate, max-age=0");
-header("Pragma: no-cache");
-header("Expires: Fri, 4 Jun 2010 12:00:00 GMT");
-header("Location:http://34.68.249.249/reg12/index.php");
+// header("Cache-Control: private, must-revalidate, max-age=0");
+// header("Pragma: no-cache");
+// header("Expires: Fri, 4 Jun 2010 12:00:00 GMT");
+// header("Location:http://34.68.249.249/reg12/index.php");
 $conn->close();
 
 ?>
