@@ -28,6 +28,7 @@ if(isset($_POST['PostalCode'])){
 }
 if(isset($_POST['Password'])){
     $password=mysqli_real_escape_string($conn,$_POST['Password']);
+    $password = md5($password);
 }
 
 if(isset($_POST['Email'])){
@@ -54,7 +55,7 @@ if(isset($_POST['Email'])){
         if (mysqli_query($conn, $sql)) {
             $json = json_encode("Success");
             echo("SUCCESS");
-            echo ($usrl1);
+
 
 
 
@@ -99,5 +100,3 @@ $conn->close();
 
 
 ?>
-
-
