@@ -33,6 +33,7 @@ if($result = mysqli_query($conn, $sql)){
         echo "</table>";
         // Free result set
         mysqli_free_result($result);
+        echo ($result);
     } else{
         echo "No records matching your query were found.";
     }
