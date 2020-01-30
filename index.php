@@ -98,7 +98,7 @@
     var passloginflag;
      function  loginvaldiate() {
 
-        if(emailloginflag==true && ){
+        if(emailloginflag==true){
             return true;
         }
         else {
