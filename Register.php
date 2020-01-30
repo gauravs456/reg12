@@ -4,7 +4,7 @@
     $mysql_username="puppy";
     $mysql_password="Puppy@123";
     $server_name="34.68.249.249";
-     $flag= "";
+     
  
 $conn = new mysqli($server_name, $mysql_username, $mysql_password, $db_name);
 
@@ -29,9 +29,6 @@ if(isset($_POST['Password'])){
     $password=mysqli_real_escape_string($conn,$_POST['Password']);
 }
  
-$usr11="1";
-
-
 if(isset($_POST['Email'])){
     $usr=mysqli_real_escape_string($conn,$_POST['Email']);
 }
@@ -41,12 +38,6 @@ if(isset($_POST['validateflag'])){
  $usrl1=1;
    
 }
-
-
-echo "$usrl1";
-
-
-
 if(($usr11==0)  && !empty($name)  ){
     
 
@@ -69,7 +60,7 @@ if(($usr11==0)  && !empty($name)  ){
 }
 else{
     echo("Coud not register");
-echo ($usrl1);
+
 
 
 }
