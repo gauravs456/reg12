@@ -41,22 +41,31 @@
             $("#loginbtn").click(function(){
                 var loginem=document.getElementById("Emlogin").value;
                 var loginpass=document.getElementById("Passlogin").value;
-//                alert(loginem);
-//                alert(loginpass);
-                $.ajax({
-                    url: 'http://34.68.249.249/reg12//welcome.php',
-                    method:"POST",
-                    data: {Emlogin:loginem, Passlogin : loginpass},
-                    success: function(result){
-                        if(result==1){
-                            window.location.href = 'http://34.68.249.249/reg12/loginwelcome.php';
+
+                if (loginem =="" && loginpass==""){
+                    alert("Please Fill your details");
+                }
+                else{
+
+                    $.ajax({
+                        url: 'http://34.68.249.249/reg12//welcome.php',
+                        method:"POST",
+                        data: {Emlogin:loginem, Passlogin : loginpass},
+                        success: function(result){
+                            if(result==1){
+                                window.location.href = 'http://34.68.249.249/reg12/loginwelcome.php';
+                            }
+                            else
+                            {
+                                alert("Sorry invalid username or password");
+                            }
                         }
-                        else
-                        {
-                            alert("Sorry invalid username or password");
-                        }
-                    }
-                });
+                    });
+
+
+                }
+
+
             });
         });
     </script>
@@ -257,7 +266,7 @@
         <h3 id="up" class="title">Login Form<h3>
     </div>
     <div class="form">
-        <form id="login_form"  action="http://34.68.249.249/reg12/welcome.php"   name="login_form" method="post" >
+        <form id="login_form"  action="http://34.68.249.249/reg12/welcome.php"   name="login_form" method="post" onsubmit = "return(validate());" >
             <div class="inputfield">
                 <label>Email Address</label>
                 <input type="text" class="input" id="Emlogin" autocomplete="off" name="Emlogin"  onkeyup="emailvallogin(this.value);" required>
