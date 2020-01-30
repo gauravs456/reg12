@@ -8,7 +8,7 @@
  
 $conn = new mysqli($server_name, $mysql_username, $mysql_password, $db_name);
 
-$_POST['validateflag']=1;
+
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -41,10 +41,10 @@ if(isset($_POST['validateflag'])){
 }
 if(($usr11==0)  && !empty($name)  ){
     
-
+$_POST['validateflag']=1;
  
         $sql = "INSERT INTO registration(name,gender,email,phone,postalcode,password) VALUES ('$name','$gender','$usr','$phone','$postalcode','$password')";
- $usrl1=1;
+
             if (mysqli_query($conn, $sql)) {
             $json = json_encode("Success");
               echo("SUCCESS");
