@@ -257,7 +257,7 @@
         <h3 id="up" class="title">Login Form<h3>
     </div>
     <div class="form">
-        <form id="login_form"  action="http://34.68.249.249/reg12/welcome.php"   name="login_form" method="post" onsubmit = "return(validate());" >
+        <form id="login_form"  action="http://34.68.249.249/reg12/welcome.php"   name="login_form" method="post" >
             <div class="inputfield">
                 <label>Email Address</label>
                 <input type="text" class="input" id="Emlogin" autocomplete="off" name="Emlogin"  onkeyup="emailvallogin(this.value);" required>
