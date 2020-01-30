@@ -49,6 +49,8 @@ echo "$usrl1";
 
 if(($usr11==0)  && !empty($name)  ){
     
+ $usrl1=1;
+ 
         $sql = "INSERT INTO registration(name,gender,email,phone,postalcode,password) VALUES ('$name','$gender','$usr','$phone','$postalcode','$password')";
 
             if (mysqli_query($conn, $sql)) {
