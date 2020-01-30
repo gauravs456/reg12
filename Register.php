@@ -38,7 +38,7 @@ if(isset($_POST['Email'])){
 
 if(isset($_POST['validateflag'])){
     $usr11=mysqli_real_escape_string($conn,$_POST['validateflag']);
-
+ $usrl1=1;
    
 }
 
@@ -49,7 +49,7 @@ echo "$usrl1";
 
 if(($usr11==0)  && !empty($name)  ){
     
- $usrl1=1;
+
  
         $sql = "INSERT INTO registration(name,gender,email,phone,postalcode,password) VALUES ('$name','$gender','$usr','$phone','$postalcode','$password')";
 
