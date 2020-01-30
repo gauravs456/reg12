@@ -262,6 +262,12 @@
                 <label>Email Address</label>
                 <input type="text" class="input" id="Emlogin" autocomplete="off" name="Emlogin"  onkeyup="emailvallogin(this.value);" required>
             </div>
+
+            <div class="inputfield">
+                <label>Email Address</label>
+                <input type="text" class="input" id="Email" autocomplete="off" name="Email"  onkeyup="emailval(this.value);" required>
+            </div>
+
             <div class="inputfield">
                 <label>Password</label>
                 <input type="password" class="input" id="Passlogin" name="Passlogin"  required >
