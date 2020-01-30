@@ -44,6 +44,7 @@ $emailvalid = "SELECT * FROM registration WHERE Email='$usr'";
     $flagmail = mysqli_query($conn, $emailvalid);
     if(mysqli_num_rows($flagmail)>0){
      echo ("Sorry Could Not register");
+     echo ($usr);
     
     }
     else{
