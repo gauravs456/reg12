@@ -135,7 +135,7 @@ include('welcome.php');
     <a href="#">Services</a>
     <a href="#">Clients</a>
     <a href="#">Contact</a>
-    <input type="Button"  id="logout">Log Out</Button>
+    <input type="Button"  id="logout" value="Register"  class="btn">
 
 
 
