@@ -11,6 +11,7 @@ if ($conn->connect_error) {
 }
 session_start();
 session_destroy();
+echo $flag=1;
 
 
 header("Cache-Control: private, must-revalidate, max-age=0");
