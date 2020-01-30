@@ -290,7 +290,7 @@
                 <input type="password" class="input" id="Passlogin" name="Passlogin"  required >
             </div>
             <div class="inputfield">
-                <input type="Button"  id="loginbtn" value="Login" name="loginbtn" class="btn">
+                <input type="submit"  id="loginbtn" value="Login" name="loginbtn" class="btn">
             </div>
         </form>
         <form id="signup" action = "http://34.68.249.249/reg12/Register.php" method="post" name = "myForm" onsubmit = "return(validate());">
