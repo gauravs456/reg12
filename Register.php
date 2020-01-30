@@ -47,8 +47,19 @@ $emailvalid = "SELECT * FROM registration WHERE Email='$usr'";
         echo("Sorry Already Registerd");
     }
     else{
-        $flag=0;
-        echo $flag;
+         $sql = "INSERT INTO registration(name,gender,email,phone,postalcode,password) VALUES ('$name','$gender','$usr','$phone','$postalcode','$password')";
+
+            if (mysqli_query($conn, $sql)) {
+            $json = json_encode("Success");
+              echo("SUCCESS");  
+            } else {
+              echo "Error: " . $sql . "" . mysqli_error($conn);
+            }
+        
+     
+     
+     
+     
     }
    
 }
