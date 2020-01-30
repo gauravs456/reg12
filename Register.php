@@ -48,7 +48,7 @@ $_POST['validateflag']=1;
             if (mysqli_query($conn, $sql)) {
             $json = json_encode("Success");
               echo("SUCCESS");
-             echo ($usrl1);
+             echo ($usrl1+"sdf");
              
 
            
