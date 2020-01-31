@@ -81,7 +81,7 @@ include('welcome.php');?>
 
                     <div class="form-group">
                         <label> Name </label>
-                        <input type="text" name="fname" id="name" class="form-control" placeholder="Enter First Name">
+                        <input type="text" name="name" id="Fname" class="form-control" placeholder="Enter First Name">
                     </div>
 
                     <div class="form-group">
