@@ -46,7 +46,7 @@
                 }
                 else if (emailloginflag==false){
                    adderror();
-                    // alert('Please enter your Valid Email Id');
+                    
                 }
                 else{
 
@@ -143,6 +143,7 @@
     }
 
      function adderror() { 
+          alert('Please enter your Valid Email Id');
          var element = document.getElementById("Emlogin");
          element.classList.add('error');
      };
