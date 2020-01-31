@@ -41,13 +41,16 @@
             $("#loginbtn").click(function(){
                 var loginem=document.getElementById("Emlogin").value;
                 var loginpass=document.getElementById("Passlogin").value;
-
-                if (loginem =="" && loginpass==""){
+                if (loginem =="" || loginpass==""){
                     alert("Please Fill your details");
+                }
+                else if (emailloginflag==false){
+                    alert('Please enter your Valid Email Id');
                 }
                 else{
 
                     $.ajax({
+
                         url: 'http://34.68.249.249/reg12//welcome.php',
                         method:"POST",
                         data: {Emlogin:loginem, Passlogin : loginpass},
@@ -152,9 +155,9 @@
         }
     }
     function emailvallogin(emailid){
-        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-        if (reg.test(emailid) == false)
-        {
+            var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+            if (reg.test(emailid) == false)
+            {
             document.getElementById('Emlogin').style.color = 'red';
             document.getElementById('Emlogin').style.borderColor = "red";
             emailloginflag=false;
@@ -269,12 +272,12 @@
         <form id="login_form"  action="http://34.68.249.249/reg12/welcome.php"   name="login_form" method="post" onsubmit = "return(validate());" >
             <div class="inputfield">
                 <label>Email Address</label>
-                <input type="text" class="input" id="Emlogin" autocomplete="off" name="Emlogin"  onkeyup="emailvallogin(this.value);" required>
+                <input type="text" class="input" id="Emlogin" autocomplete="off" name="Emlogin"  onkeyup="emailvallogin(this.value);">
             </div>
 
             <div class="inputfield">
                 <label>Password</label>
-                <input type="password" class="input" id="Passlogin" name="Passlogin"  required >
+                <input type="password" class="input" id="Passlogin" name="Passlogin">
             </div>
             <div class="inputfield">
                 <input type="submit"  id="loginbtn" value="Login" name="loginbtn" class="btn">
