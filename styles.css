@@ -29,14 +29,12 @@ display:none;
   padding: 30px;
 }
 
-
-    &.error
+   .error
     {
       animation: shake 0.2s ease-in-out 0s 2;
       box-shadow: 0 0 0.5em red;
     }
-  }
-}
+ 
 
 @keyframes shake {
   0% { margin-left: 0rem; }
@@ -44,6 +42,7 @@ display:none;
   75% { margin-left: -0.5rem; }
   100% { margin-left: 0rem; }
 }
+
 
 
 .wrapper .title{
