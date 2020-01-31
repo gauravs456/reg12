@@ -129,11 +129,11 @@ include('welcome.php');?>
                 </button>
             </div>
 
-            <form action="deletecode.php" method="POST">
+            <form action="http://34.68.249.249/reg12/delete.php" method="POST">
 
                 <div class="modal-body">
 
-                    <input type="hidden" name="delete_id" id="delete_id">
+                    <input type="hidden" name="id" id="delete_id">
 
                     <h4> Do you want to Delete this Data ??</h4>
                 </div>
