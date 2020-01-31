@@ -144,8 +144,7 @@
 
      function adderror() { 
           alert('Please enter your Valid Email Id');
-         var element = document.getElementById("inputfield");
-         element.classList.add('error');
+         
      };
 
     function emailval(emailid){
