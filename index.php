@@ -45,7 +45,8 @@
                     alert("Please Fill your details");
                 }
                 else if (emailloginflag==false){
-                    alert('Please enter your Valid Email Id');
+                    addError();
+                    // alert('Please enter your Valid Email Id');
                 }
                 else{
 
@@ -140,6 +141,9 @@
             document.getElementById('Name').style.borderColor = "green";
         }
     }
+
+    var addError = function() { element.classList.add('error'); };
+
     function emailval(emailid){
         var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
         if (reg.test(emailid) == false)
