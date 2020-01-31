@@ -77,7 +77,7 @@ include('welcome.php');?>
 
                 <div class="modal-body">
 
-                    <input type="hidden" name="update_id" id="update_id">
+                    <input type="hidden" name="id" id="id">
 
                     <div class="form-group">
                         <label> Name </label>
