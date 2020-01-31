@@ -1,12 +1,15 @@
 <?php
 include('welcome.php');
-
+if(!isset($_SESSION['id']))
+{
+    header("location: http://34.68.249.249/reg12/index.php");
+}
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
@@ -147,26 +150,26 @@ include('welcome.php');
 
 
             <script>
-                 
-                     function myready() {
+
+                function myready() {
 
 
-            $.ajax({
-                url: 'http://34.68.249.249/reg12//logout.php',
-                method: "POST",
-                success: function (result) {
-                    if (result == 1) {
-                        window.location.href = 'http://34.68.249.249/reg12/index.php';
-                    } else {
+                    $.ajax({
+                        url: 'http://34.68.249.249/reg12//logout.php',
+                        method: "POST",
+                        success: function (result) {
+                            if (result == 1) {
+                                window.location.href = 'http://34.68.249.249/reg12/index.php';
+                            } else {
 
-                    }
+                            }
+                        }
+                    });
+
+
                 }
-            });
 
 
-        }
-                 
-                 
                 function openNav() {
                     document.getElementById("mySidenav").style.width = "250px";
                     document.getElementById("main").style.marginLeft = "250px";
