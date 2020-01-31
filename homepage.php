@@ -81,22 +81,22 @@ include('welcome.php');?>
 
                     <div class="form-group">
                         <label> Name </label>
-                        <input type="text" name="name" id="fname" class="form-control" placeholder="Enter First Name">
+                        <input type="text" name="name" id="fname" class="form-control" placeholder="Enter your Name">
                     </div>
 
                     <div class="form-group">
                         <label> Gender </label>
-                        <input type="text" name="lname" id="lname" class="form-control" placeholder="Enter Last Name">
+                        <input type="text" name="gender" id="lname" class="form-control" placeholder="Enter Gender">
                     </div>
 
                     <div class="form-group">
                         <label> Email </label>
-                        <input type="text" name="course" id="course" class="form-control" placeholder="Enter Course">
+                        <input type="text" name="email" id="course" class="form-control" placeholder="Enter your Mail Id">
                     </div>
 
                     <div class="form-group">
                         <label> Phone Number </label>
-                        <input type="text" name="contact" id="contact" class="form-control" placeholder="Enter Phone Number">
+                        <input type="text" name="phone" id="contact" class="form-control" placeholder="Enter Phone Number">
                     </div>
                 </div>
                 <div class="modal-footer">
