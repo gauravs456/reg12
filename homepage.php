@@ -173,9 +173,10 @@ include('welcome.php');?>
                 $mysql_password="Puppy@123";
                 $server_name="34.68.249.249";
                 $conn = new mysqli($server_name, $mysql_username, $mysql_password, $db_name);
-                if ($conn->connect_error) {
-                    die("Connection failed: " . $conn->connect_error);
-                }
+               if (mysqli_connect_errno()) {
+                    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+                    exit();
+}
                 $sql = "SELECT * FROM registration";
                 $query_run = mysqli_query($conn, $sql);
                 ?>
@@ -198,23 +199,23 @@ include('welcome.php');?>
                         foreach($query_run as $row)
                         {
                             ?>
-                            <tbody>
-                            <tr>
-                                <td> <?php echo $row['id']; ?> </td>
-                                <td> <?php echo $row['name']; ?> </td>
-                                <td> <?php echo $row['gender']; ?> </td>
-                                <td> <?php echo $row['email']; ?> </td>
-                                <td> <?php echo $row['phone']; ?> </td>
-                                <td> <?php echo $row['postalcode']; ?> </td>
-                                <td>
-                                    <button type="button" class="btn btn-success editbtn"> EDIT </button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger deletebtn"> DELETE </button>
-                                </td>
-                            </tr>
-                            </tbody>
-                            <?php
+                    <tbody>
+                    <tr>
+                        <td> <?php echo $row['id']; ?> </td>
+                        <td> <?php echo $row['name']; ?> </td>
+                        <td> <?php echo $row['gender']; ?> </td>
+                        <td> <?php echo $row['email']; ?> </td>
+                        <td> <?php echo $row['phone']; ?> </td>
+                        <td> <?php echo $row['postalcode']; ?> </td>
+                        <td>
+                            <button type="button" class="btn btn-success editbtn"> EDIT </button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-danger deletebtn"> DELETE </button>
+                        </td>
+                    </tr>
+                    </tbody>
+                    <?php
                         }
                     }
                     else
