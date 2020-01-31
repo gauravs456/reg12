@@ -5,13 +5,10 @@ $mysql_password="Puppy@123";
 $server_name="34.68.249.249";
 $conn = new mysqli($server_name, $mysql_username, $mysql_password, $db_name);
 
-if(!isset($_POST['updatedata']))
-{
     $id = $_POST['id'];
-    
-     $name=mysqli_real_escape_string($conn,$_POST['name']);
-     $gender=mysqli_real_escape_string($conn,$_POST['gender']);
- $email=mysqli_real_escape_string($conn,$_POST['email']);
+    $name=mysqli_real_escape_string($conn,$_POST['name']);
+    $gender=mysqli_real_escape_string($conn,$_POST['gender']);
+    $email=mysqli_real_escape_string($conn,$_POST['email']);
     $phone=mysqli_real_escape_string($conn,$_POST['phone']);
 
     $query = "UPDATE registration SET name='$name', gender='$gender', email='$email', phone=' $phone' WHERE id='$id'  ";
@@ -21,9 +18,6 @@ if(!isset($_POST['updatedata']))
     {
         echo "Success";
         echo ($name);
-        echo ($gender);
-        echo ($email);
-        echo ($phone);
 //        echo '<script> alert("Data Updated"); </script>';
 //        header("Location:index.php");
     }
@@ -33,5 +27,5 @@ if(!isset($_POST['updatedata']))
 
 //        echo '<script> alert("Data Not Updated"); </script>';
     }
-}
+
 ?>
