@@ -1,10 +1,6 @@
 <?php
 include('welcome.php');
-if(!isset($_SESSION['id']))
-{
-    header("location: http://34.68.249.249/reg12/loginwelcome.php");
-}
-?>
+
 
 
 
