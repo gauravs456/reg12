@@ -17,9 +17,11 @@ if($query_run)
 }
 else
 {
-    echo ("Fail");
+    
+    echo ($id);
+//     echo ("Fail");
 
-    echo '<script> alert("Data Not Updated"); </script>';
+//     echo '<script> alert("Data Not Updated"); </script>';
 }
 
 ?>
