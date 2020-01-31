@@ -73,7 +73,7 @@ include('welcome.php');?>
                 </button>
             </div>
 
-            <form action="updatecode.php" method="POST">
+            <form action="http://34.68.249.249/reg12/updatedata.php" method="POST">
 
                 <div class="modal-body">
 
