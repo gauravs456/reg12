@@ -53,9 +53,7 @@ if(isset($_POST['Email'])){
         $sql = "INSERT INTO registration(name,gender,email,phone,postalcode,password) VALUES ('$name','$gender','$usr','$phone','$postalcode','$password')";
 
         if (mysqli_query($conn, $sql)) {
-            $json = json_encode("Success");
-            echo("SUCCESS");
-
+             header("location: http://34.68.249.249/reg12/index.php");
 
 
 
