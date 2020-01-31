@@ -20,6 +20,10 @@ if(!isset($_POST['updatedata']))
     if($query_run)
     {
         echo "Success";
+        echo ($name);
+        echo ($gender);
+        echo ($email);
+        echo ($phone);
 //        echo '<script> alert("Data Updated"); </script>';
 //        header("Location:index.php");
     }
