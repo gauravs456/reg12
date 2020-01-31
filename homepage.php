@@ -168,13 +168,13 @@ include('welcome.php');?>
             <div class="card-body">
 
                 <?php
-               $db_name="rtds1";
-               $mysql_username="puppy";
-               $mysql_password="Puppy@123";
-               $server_name="34.68.249.249";
-               $conn = new mysqli($server_name, $mysql_username, $mysql_password, $db_name);
-               if ($conn.connect_error) {
-                die("Connection failed: " . $conn.connect_error);
+                $db_name="rtds1";
+                $mysql_username="puppy";
+                $mysql_password="Puppy@123";
+                $server_name="34.68.249.249";
+                $conn = new mysqli($server_name, $mysql_username, $mysql_password, $db_name);
+                if ($conn->connect_error) {
+                    die("Connection failed: " . $conn->connect_error);
                 }
                 $sql = "SELECT * FROM registration";
                 $query_run = mysqli_query($conn, $sql);
@@ -193,35 +193,35 @@ include('welcome.php');?>
                     </tr>
                     </thead>
                     <?php
-                if($query_run)
-                {
-                    foreach($query_run as $row)
+                    if($query_run)
                     {
-            ?>
-                    <tbody>
-                    <tr>
-                        <td> <?php echo $row['id']; ?> </td>
-                        <td> <?php echo $row['name']; ?> </td>
-                        <td> <?php echo $row['gender']; ?> </td>
-                        <td> <?php echo $row['email']; ?> </td>
-                        <td> <?php echo $row['phone']; ?> </td>
-                        <td> <?php echo $row['postalcode']; ?> </td>
-                        <td>
-                            <button type="button" class="btn btn-success editbtn"> EDIT </button>
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-danger deletebtn"> DELETE </button>
-                        </td>
-                    </tr>
-                    </tbody>
-                    <?php
+                        foreach($query_run as $row)
+                        {
+                            ?>
+                            <tbody>
+                            <tr>
+                                <td> <?php echo $row['id']; ?> </td>
+                                <td> <?php echo $row['name']; ?> </td>
+                                <td> <?php echo $row['gender']; ?> </td>
+                                <td> <?php echo $row['email']; ?> </td>
+                                <td> <?php echo $row['phone']; ?> </td>
+                                <td> <?php echo $row['postalcode']; ?> </td>
+                                <td>
+                                    <button type="button" class="btn btn-success editbtn"> EDIT </button>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-danger deletebtn"> DELETE </button>
+                                </td>
+                            </tr>
+                            </tbody>
+                            <?php
+                        }
                     }
-                }
-                else
-                {
-                    echo "No Record Found";
-                }
-            ?>
+                    else
+                    {
+                        echo "No Record Found";
+                    }
+                    ?>
                 </table>
             </div>
         </div>
@@ -331,6 +331,14 @@ include('welcome.php');?>
 
 
 </html>
+
+
+
+
+
+
+
+
 
 
 
