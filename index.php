@@ -143,7 +143,8 @@
     }
 
      function adderror() { 
-         element.classList.add('wrapp');
+         var element = document.getElementById("Emlogin");
+         element.classList.add('error');
      };
 
     function emailval(emailid){
