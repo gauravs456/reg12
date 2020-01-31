@@ -6,7 +6,7 @@ $server_name="34.68.249.249";
 $conn = new mysqli($server_name, $mysql_username, $mysql_password, $db_name);
 
     $id = $_POST['id'];
-    $name=mysqli_real_escape_string($conn,$_POST['name']);
+    $name=mysqli_real_escape_string($conn,$_POST['Name']);
     $gender=mysqli_real_escape_string($conn,$_POST['gender']);
     $email=mysqli_real_escape_string($conn,$_POST['email']);
     $phone=mysqli_real_escape_string($conn,$_POST['phone']);
