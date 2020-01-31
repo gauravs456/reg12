@@ -73,7 +73,7 @@ include('welcome.php');?>
                 </button>
             </div>
 
-            <form action="updatecode.php" method="POST">
+            <form action="http://34.68.249.249/reg12/updatedata.php" method="POST">
 
                 <div class="modal-body">
 
@@ -81,12 +81,12 @@ include('welcome.php');?>
 
                     <div class="form-group">
                         <label> Name </label>
-                        <input type="text" name="fname" id="fname" class="form-control" placeholder="Enter First Name">
+                        <input type="text" name="fname" id="name" class="form-control" placeholder="Enter First Name">
                     </div>
 
                     <div class="form-group">
                         <label> Gender </label>
-                        <input type="text" name="lname" id="lname" class="form-control" placeholder="Enter Last Name">
+                        <input type="text" name="lname" id="gender" class="form-control" placeholder="Enter Last Name">
                     </div>
 
                     <div class="form-group">
