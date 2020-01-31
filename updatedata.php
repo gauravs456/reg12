@@ -16,17 +16,15 @@ $conn = new mysqli($server_name, $mysql_username, $mysql_password, $db_name);
 
     if($query_run)
     {
-        echo "Success";
-        
-        
-//        echo '<script> alert("Data Updated"); </script>';
-//        header("Location:index.php");
+   
+       echo '<script> alert("Data Updated"); </script>';
+       header("Location:http://34.68.249.249/reg12/homepage.php");
     }
     else
     {
         echo ("Fail");
 
-//        echo '<script> alert("Data Not Updated"); </script>';
+       echo '<script> alert("Data Not Updated"); </script>';
     }
 
 ?>
