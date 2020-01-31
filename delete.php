@@ -6,7 +6,7 @@ $server_name="34.68.249.249";
 $conn = new mysqli($server_name, $mysql_username, $mysql_password, $db_name);
 
 $id = $_POST['id'];
-$query = "DELETE FROM registratioon  WHERE id='$id'  ";
+$query = "DELETE FROM registration  WHERE id='$id'  ";
 $query_run = mysqli_query($conn, $query);
 
 if($query_run)
