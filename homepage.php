@@ -81,17 +81,17 @@ include('welcome.php');?>
 
                     <div class="form-group">
                         <label> Name </label>
-                        <input type="text" name="name" id="name" class="form-control" placeholder="Enter your Name">
+                        <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name Name">
                     </div>
 
                     <div class="form-group">
                         <label> Gender </label>
-                        <input type="text" name="gender" id="gender" class="form-control" placeholder="Gender">
+                        <input type="text" name="gender" id="gender" class="form-control" placeholder="Enter Gender">
                     </div>
 
                     <div class="form-group">
                         <label> Email </label>
-                        <input type="text" name="email" id="email" class="form-control" placeholder="Enter Your Mail id">
+                        <input type="text" name="email" id="email" class="form-control" placeholder=" Enter Email Id">
                     </div>
 
                     <div class="form-group">
