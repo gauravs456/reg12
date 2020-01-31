@@ -18,6 +18,9 @@ $conn = new mysqli($server_name, $mysql_username, $mysql_password, $db_name);
     {
         echo "Success";
         echo ($name);
+         echo ($gender);
+         echo ($email);
+        
 //        echo '<script> alert("Data Updated"); </script>';
 //        header("Location:index.php");
     }
