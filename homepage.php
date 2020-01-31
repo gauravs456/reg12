@@ -73,30 +73,30 @@ include('welcome.php');?>
                 </button>
             </div>
 
-            <form action="http://34.68.249.249/reg12/updatedata.php" method="POST">
+            <form action="updatecode.php" method="POST">
 
                 <div class="modal-body">
 
-                    <input type="hidden" name="id" id="id">
+                    <input type="hidden" name="update_id" id="update_id">
 
                     <div class="form-group">
                         <label> Name </label>
-                        <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name Name">
+                        <input type="text" name="fname" id="fname" class="form-control" placeholder="Enter First Name">
                     </div>
 
                     <div class="form-group">
                         <label> Gender </label>
-                        <input type="text" name="gender" id="gender" class="form-control" placeholder="Enter Gender">
+                        <input type="text" name="lname" id="lname" class="form-control" placeholder="Enter Last Name">
                     </div>
 
                     <div class="form-group">
                         <label> Email </label>
-                        <input type="text" name="email" id="email" class="form-control" placeholder=" Enter Email Id">
+                        <input type="text" name="course" id="course" class="form-control" placeholder="Enter Course">
                     </div>
 
                     <div class="form-group">
                         <label> Phone Number </label>
-                        <input type="text" name="phone" id="phone" class="form-control" placeholder="Enter Phone Number">
+                        <input type="text" name="contact" id="contact" class="form-control" placeholder="Enter Phone Number">
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -173,10 +173,10 @@ include('welcome.php');?>
                 $mysql_password="Puppy@123";
                 $server_name="34.68.249.249";
                 $conn = new mysqli($server_name, $mysql_username, $mysql_password, $db_name);
-               if (mysqli_connect_errno()) {
+                if (mysqli_connect_errno()) {
                     echo "Failed to connect to MySQL: " . mysqli_connect_error();
                     exit();
-}
+                }
                 $sql = "SELECT * FROM registration";
                 $query_run = mysqli_query($conn, $sql);
                 ?>
@@ -199,23 +199,23 @@ include('welcome.php');?>
                         foreach($query_run as $row)
                         {
                             ?>
-                    <tbody>
-                    <tr>
-                        <td> <?php echo $row['id']; ?> </td>
-                        <td> <?php echo $row['name']; ?> </td>
-                        <td> <?php echo $row['gender']; ?> </td>
-                        <td> <?php echo $row['email']; ?> </td>
-                        <td> <?php echo $row['phone']; ?> </td>
-                        <td> <?php echo $row['postalcode']; ?> </td>
-                        <td>
-                            <button type="button" class="btn btn-success editbtn"> EDIT </button>
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-danger deletebtn"> DELETE </button>
-                        </td>
-                    </tr>
-                    </tbody>
-                    <?php
+                            <tbody>
+                            <tr>
+                                <td> <?php echo $row['id']; ?> </td>
+                                <td> <?php echo $row['name']; ?> </td>
+                                <td> <?php echo $row['gender']; ?> </td>
+                                <td> <?php echo $row['email']; ?> </td>
+                                <td> <?php echo $row['phone']; ?> </td>
+                                <td> <?php echo $row['postalcode']; ?> </td>
+                                <td>
+                                    <button type="button" class="btn btn-success editbtn"> EDIT </button>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-danger deletebtn"> DELETE </button>
+                                </td>
+                            </tr>
+                            </tbody>
+                            <?php
                         }
                     }
                     else
