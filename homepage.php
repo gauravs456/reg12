@@ -80,17 +80,17 @@ include('welcome.php');?>
                 <input type="hidden" name="update_id" id="update_id">
 
                 <div class="form-group">
-                    <label> First Name </label>
+                    <label> Name </label>
                     <input type="text" name="fname" id="fname" class="form-control" placeholder="Enter First Name">
                 </div>
 
                 <div class="form-group">
-                    <label> Last Name </label>
+                    <label> Gender </label>
                     <input type="text" name="lname" id="lname" class="form-control" placeholder="Enter Last Name">
                 </div>
 
                 <div class="form-group">
-                    <label> Course </label>
+                    <label> Email </label>
                     <input type="text" name="course" id="course" class="form-control" placeholder="Enter Course">
                 </div>
 
