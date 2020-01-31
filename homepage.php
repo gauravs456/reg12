@@ -9,7 +9,7 @@ include('welcome.php');?>
     <title> Show Details </title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css">
-    </head>
+</head>
 
 <body>
 <!-- Modal -->
@@ -64,49 +64,49 @@ include('welcome.php');?>
 <!-- EDIT POP UP FORM (Bootstrap MODAL) -->
 
 <div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel"> Edit Student Data </h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-
-        <form action="updatecode.php" method="POST">
-
-            <div class="modal-body">
-
-                <input type="hidden" name="update_id" id="update_id">
-
-                <div class="form-group">
-                    <label> Name </label>
-                    <input type="text" name="fname" id="fname" class="form-control" placeholder="Enter First Name">
-                </div>
-
-                <div class="form-group">
-                    <label> Gender </label>
-                    <input type="text" name="lname" id="lname" class="form-control" placeholder="Enter Last Name">
-                </div>
-
-                <div class="form-group">
-                    <label> Email </label>
-                    <input type="text" name="course" id="course" class="form-control" placeholder="Enter Course">
-                </div>
-
-                <div class="form-group">
-                    <label> Phone Number </label>
-                    <input type="text" name="contact" id="contact" class="form-control" placeholder="Enter Phone Number">
-                </div>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"> Edit Student Data </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" name="updatedata" class="btn btn-primary">Update Data</button>
-            </div>
-        </form>
 
+            <form action="updatecode.php" method="POST">
+
+                <div class="modal-body">
+
+                    <input type="hidden" name="update_id" id="update_id">
+
+                    <div class="form-group">
+                        <label> Name </label>
+                        <input type="text" name="fname" id="fname" class="form-control" placeholder="Enter First Name">
+                    </div>
+
+                    <div class="form-group">
+                        <label> Gender </label>
+                        <input type="text" name="lname" id="lname" class="form-control" placeholder="Enter Last Name">
+                    </div>
+
+                    <div class="form-group">
+                        <label> Email </label>
+                        <input type="text" name="course" id="course" class="form-control" placeholder="Enter Course">
+                    </div>
+
+                    <div class="form-group">
+                        <label> Phone Number </label>
+                        <input type="text" name="contact" id="contact" class="form-control" placeholder="Enter Phone Number">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" name="updatedata" class="btn btn-primary">Update Data</button>
+                </div>
+            </form>
+
+        </div>
     </div>
-  </div>
 </div>
 
 <!-- #################################################################################################### -->
@@ -120,32 +120,32 @@ include('welcome.php');?>
 <!-- DELETE POP UP FORM (Bootstrap MODAL) -->
 
 <div class="modal fade" id="deletemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel"> Delete Student Data </h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-
-        <form action="deletecode.php" method="POST">
-
-            <div class="modal-body">
-
-                <input type="hidden" name="delete_id" id="delete_id">
-
-                <h4> Do you want to Delete this Data ??</h4>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"> Delete Student Data </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">  NO </button>
-                <button type="submit" name="deletedata" class="btn btn-primary"> Yes !! Delete it. </button>
-            </div>
-        </form>
 
+            <form action="deletecode.php" method="POST">
+
+                <div class="modal-body">
+
+                    <input type="hidden" name="delete_id" id="delete_id">
+
+                    <h4> Do you want to Delete this Data ??</h4>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">  NO </button>
+                    <button type="submit" name="deletedata" class="btn btn-primary"> Yes !! Delete it. </button>
+                </div>
+            </form>
+
+        </div>
     </div>
-  </div>
-</div> 
+</div>
 
 <!-- #################################################################################################### -->
 
@@ -167,57 +167,57 @@ include('welcome.php');?>
         <div class="card">
             <div class="card-body">
 
-            <?php
+                <?php
                $db_name="rtds1";
                $mysql_username="puppy";
                $mysql_password="Puppy@123";
                $server_name="34.68.249.249";
                $conn = new mysqli($server_name, $mysql_username, $mysql_password, $db_name);
-               if ($conn->connect_error) {
-                   die("Connection failed: " . $conn->connect_error);
-               }
-               $sql = "SELECT * FROM registration";
+               if ($conn.connect_error) {
+                die("Connection failed: " . $conn.connect_error);
+                }
+                $sql = "SELECT * FROM registration";
                 $query_run = mysqli_query($conn, $sql);
-            ?>
+                ?>
                 <table id="datatableid" class="table table-bordered table-dark">
                     <thead>
-                        <tr>
-                            <th scope="col"> ID</th>
-                            <th scope="col"> Name</th>
-                            <th scope="col">Gender </th>
-                            <th scope="col"> Email </th>
-                            <th scope="col"> Phone </th>
-                            <th scope="col"> PostalCode </th>
-                            <th scope="col"> EDIT </th>
-                            <th scope="col"> DELETE </th>
-                        </tr>
+                    <tr>
+                        <th scope="col"> ID</th>
+                        <th scope="col"> Name</th>
+                        <th scope="col">Gender </th>
+                        <th scope="col"> Email </th>
+                        <th scope="col"> Phone </th>
+                        <th scope="col"> PostalCode </th>
+                        <th scope="col"> EDIT </th>
+                        <th scope="col"> DELETE </th>
+                    </tr>
                     </thead>
-            <?php
+                    <?php
                 if($query_run)
                 {
                     foreach($query_run as $row)
                     {
             ?>
                     <tbody>
-                        <tr>
-                            <td> <?php echo $row['id']; ?> </td>                            
-                            <td> <?php echo $row['name']; ?> </td>                            
-                            <td> <?php echo $row['gender']; ?> </td>                            
-                            <td> <?php echo $row['email']; ?> </td>                            
-                            <td> <?php echo $row['phone']; ?> </td> 
-                            <td> <?php echo $row['postalcode']; ?> </td>                                                       
-                            <td> 
-                                <button type="button" class="btn btn-success editbtn"> EDIT </button>
-                            </td> 
-                            <td>
-                                <button type="button" class="btn btn-danger deletebtn"> DELETE </button>
-                            </td>
-                        </tr>
+                    <tr>
+                        <td> <?php echo $row['id']; ?> </td>
+                        <td> <?php echo $row['name']; ?> </td>
+                        <td> <?php echo $row['gender']; ?> </td>
+                        <td> <?php echo $row['email']; ?> </td>
+                        <td> <?php echo $row['phone']; ?> </td>
+                        <td> <?php echo $row['postalcode']; ?> </td>
+                        <td>
+                            <button type="button" class="btn btn-success editbtn"> EDIT </button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-danger deletebtn"> DELETE </button>
+                        </td>
+                    </tr>
                     </tbody>
-            <?php           
+                    <?php
                     }
                 }
-                else 
+                else
                 {
                     echo "No Record Found";
                 }
@@ -241,22 +241,22 @@ include('welcome.php');?>
 
 <script>
 
-$(document).ready(function() {
+    $(document).ready(function() {
 
-    $('#datatableid').DataTable({
-        "pagingType": "full_numbers",
-        "lengthMenu": [
-            [10, 25, 50, -1],
-            [10, 25, 50, "All"]
-        ],
-        responsive: true,
-        language: {
-            search: "_INPUT_",
-            searchPlaceholder: "Search Your Data",
-        }
+        $('#datatableid').DataTable({
+            "pagingType": "full_numbers",
+            "lengthMenu": [
+                [10, 25, 50, -1],
+                [10, 25, 50, "All"]
+            ],
+            responsive: true,
+            language: {
+                search: "_INPUT_",
+                searchPlaceholder: "Search Your Data",
+            }
+        });
+
     });
-
-});
 
 </script>
 
@@ -268,11 +268,11 @@ $(document).ready(function() {
 
 <script>
 
-$(document).ready(function () {
+    $(document).ready(function () {
 
-    $('.deletebtn').on('click', function() {
-        
-        $('#deletemodal').modal('show');
+        $('.deletebtn').on('click', function() {
+
+            $('#deletemodal').modal('show');
 
             $tr = $(this).closest('tr');
 
@@ -283,9 +283,9 @@ $(document).ready(function () {
             console.log(data);
 
             $('#delete_id').val(data[0]);
-      
+
+        });
     });
-});
 
 </script>
 
@@ -293,12 +293,12 @@ $(document).ready(function () {
 
 <script>
 
-$(document).ready(function () {
-    $('.editbtn').on('click', function() {
-        
-        $('#editmodal').modal('show');
+    $(document).ready(function () {
+        $('.editbtn').on('click', function() {
 
-        
+            $('#editmodal').modal('show');
+
+
             $tr = $(this).closest('tr');
 
             var data = $tr.children("td").map(function() {
@@ -312,8 +312,8 @@ $(document).ready(function () {
             $('#lname').val(data[2]);
             $('#course').val(data[3]);
             $('#contact').val(data[4]);
+        });
     });
-});
 
 </script>
 
@@ -334,4 +334,4 @@ $(document).ready(function () {
 
 
 
-   
+
