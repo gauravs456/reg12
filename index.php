@@ -15,6 +15,12 @@ if(isset($_SESSION['id']))
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+<script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"> </script>
+<script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"> </script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>Registration Form</title>
@@ -81,6 +87,37 @@ if(isset($_SESSION['id']))
 
             });
         });
+        
+        $(document).ready(function () {
+        $('.forgotbtn').on('click', function() {
+
+            $('#editmodal').modal('show');
+
+
+            $tr = $(this).closest('tr');
+
+            var data = $tr.children("td").map(function() {
+                return $(this).text();
+            }).get();
+
+            console.log(data);
+
+            $('#update_id').val(data[0]);
+            $('#fname').val(data[1]);
+            $('#lname').val(data[2]);
+            $('#course').val(data[3]);
+            $('#contact').val(data[4]);
+        });
+    });
+        
+        
+        
+        
+        
+        
+        
+        
+        
     </script>
     <script>
         $(document).ready(function(){
@@ -298,7 +335,64 @@ if(isset($_SESSION['id']))
             <div class="inputfield">
                 <input type="submit"  id="loginbtn" value="Login" name="loginbtn" class="btn">
             </div>
+            
+            
+             <div class="inputfield">
+                <input type="submit"  id="forgotbtn" value="Forgot Password" name="loginbtn" class="btn">
+            </div>
         </form>
+        
+        
+        <div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"> Edit Student Data </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <form action="http://34.68.249.249/reg12/updatedata.php" method="POST">
+
+                <div class="modal-body">
+
+                    <input type="hidden" name="id" id="id">
+
+                    <div class="form-group">
+                        <label> Name </label>
+                        <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name Name">
+                    </div>
+
+                    <div class="form-group">
+                        <label> Gender </label>
+                        <input type="text" name="gender" id="gender" class="form-control" placeholder="Enter Gender">
+                    </div>
+
+                    <div class="form-group">
+                        <label> Email </label>
+                        <input type="text" name="email" id="email" class="form-control" placeholder=" Enter Email Id">
+                    </div>
+
+                    <div class="form-group">
+                        <label> Phone Number </label>
+                        <input type="text" name="phone" id="phone" class="form-control" placeholder="Enter Phone Number">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" name="updatedata" class="btn btn-primary">Update Data</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+        
+        
+        
+        
         <form id="signup" action = "http://34.68.249.249/reg12/Register.php" method="post" name = "myForm" onsubmit = "return(validate());">
             <div class="inputfield">
                 <input type='hidden' id='validateflag' name='validateflag' >
