@@ -19,7 +19,6 @@ if(isset($_POST['Email'])) {
     if (mysqli_num_rows($flagmail) > 0) {
         $encode = md5($email);
         $sub = "BINGO";
-         $mail = new PHPMailer;
         echo ($sub);
 
     }
