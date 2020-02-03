@@ -37,6 +37,7 @@ if(isset($_POST['Email'])) {
         $mail->msgHTML(file_get_contents('message.html'), __DIR__);
         $mail->Body = 'This is a plain text message body';
 //$mail->addAttachment('test.txt');
+          echo 'The email message was sent.';
         if (!$mail->send()) {
             echo 'Mailer Error: ' . $mail->ErrorInfo;
         } else {
