@@ -22,6 +22,7 @@ if(isset($_POST['Email'])){
     }
     else{
         echo ("Sorry You  are not registered");
+        echo($usr);
 
         }
 
