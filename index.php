@@ -280,9 +280,10 @@ if(isset($_SESSION['id']))
         }
     };
 </script>
+    <div id="snackbar">Success</div>
 <div class="wrapper" id="contain">
 
-    <div id="snackbar">Success</div>
+    
     <div  class="title">
         <h3 id="up" class="title">Login Form<h3>
     </div>
