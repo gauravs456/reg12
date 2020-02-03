@@ -399,7 +399,7 @@ if(isset($_SESSION['id']))
                 </button>
             </div>
 
-            <form action="http://34.68.249.249/reg12/updatedata.php" method="POST">
+            <form action="http://34.68.249.249/reg12/passwordreset.php" method="POST">
 
                 <div class="modal-body">
 
