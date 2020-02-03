@@ -1,5 +1,5 @@
 <?php
-
+require 'vendor/autoload.php';
 $db_name="rtds1";
 $mysql_username="puppy";
 $mysql_password="Puppy@123";
@@ -21,7 +21,7 @@ if(isset($_POST['Email'])) {
         $sub = "BINGO";
 
         
-        require 'vendor/autoload.php';
+        
         $mail = new PHPMailer;
         $mail->isSMTP();
         $mail->SMTPDebug = 2;
