@@ -393,7 +393,7 @@ if(isset($_SESSION['id']))
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel"> Edit Student Data </h5>
+                <h5 class="modal-title" id="exampleModalLabel"> Reset Your Password </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -406,28 +406,13 @@ if(isset($_SESSION['id']))
                     <input type="hidden" name="id" id="id">
 
                     <div class="form-group">
-                        <label> Name </label>
+                        <label> Email Addresss </label>
                         <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name Name">
                     </div>
 
-                    <div class="form-group">
-                        <label> Gender </label>
-                        <input type="text" name="gender" id="gender" class="form-control" placeholder="Enter Gender">
-                    </div>
-
-                    <div class="form-group">
-                        <label> Email </label>
-                        <input type="text" name="email" id="email" class="form-control" placeholder=" Enter Email Id">
-                    </div>
-
-                    <div class="form-group">
-                        <label> Phone Number </label>
-                        <input type="text" name="phone" id="phone" class="form-control" placeholder="Enter Phone Number">
-                    </div>
-                </div>
-                <div class="modal-footer">
+                                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" name="updatedata" class="btn btn-primary">Update Data</button>
+                    <button type="submit" name="updatedata" class="btn btn-primary">Send Password Reset Link</button>
                 </div>
             </form>
 
