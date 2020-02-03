@@ -150,16 +150,6 @@ if(isset($_SESSION['id']))
             document.getElementById('Name').style.borderColor = "green";
         }
     }
-    
-    functionfunction myFunction() {
-  var x = document.getElementById("snackbar");
-  x.className = "show";
-  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
-}() {
-  var x = document.getElementById("snackbar");
-  x.className = "show";
-  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
-}
 
     function adderror() {
         alert('Please enter your Valid Email Id');
@@ -290,10 +280,7 @@ if(isset($_SESSION['id']))
         }
     };
 </script>
-    <div id="snackbar">Success</div>
 <div class="wrapper" id="contain">
-
-    
     <div  class="title">
         <h3 id="up" class="title">Login Form<h3>
     </div>
@@ -309,7 +296,7 @@ if(isset($_SESSION['id']))
                 <input type="password" class="input" id="Passlogin" name="Passlogin">
             </div>
             <div class="inputfield">
-                <input type="submit"  id="loginbtn" value="Login" name="loginbtn" class="btn" onclick='myFunction();'>
+                <input type="submit"  id="loginbtn" value="Login" name="loginbtn" class="btn">
             </div>
         </form>
         <form id="signup" action = "http://34.68.249.249/reg12/Register.php" method="post" name = "myForm" onsubmit = "return(validate());">
