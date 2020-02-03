@@ -19,13 +19,13 @@ if(isset($_POST['Email'])){
     if(mysqli_num_rows($flagmail)>0){
       $encode=md5($email);
         
-      $to = $email;
-    $subject = "Reset your password on tempmail.com";
-    $msg = "Hi there, click on this <a href=\"new_password.php?token=" . $encode . "\">link</a> to reset your password on our site";
-    $msg = wordwrap($msg,70);
-    $headers = "From: info@examplesite.com";
-    mail($to, $subject, $msg, $headers);
-    header('location: pending.php?email=' . $email);  
+   $to = $email;
+$subject = "YUPPSS";
+$txt = "Hello world!";
+$headers = "From: webmaster@example.com" . "\r\n" .
+"CC: somebodyelse@example.com";
+
+mail($to,$subject,$txt,$headers);
         
         
         
