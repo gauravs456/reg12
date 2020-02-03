@@ -1,4 +1,12 @@
 <?php
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+require 'PHPMailer-master/src/Exception.php';
+require 'PHPMailer-master/src/PHPMailer.php';
+require 'PHPMailer-master/src/SMTP.php';
+
+
 $db_name="rtds1";
 $mysql_username="puppy";
 $mysql_password="Puppy@123";
@@ -18,6 +26,7 @@ if(isset($_POST['Email'])) {
     if (mysqli_num_rows($flagmail) > 0) {
         $encode = md5($email);
     $sub = "BINGO";
+        echo($sub);
 
     }
     else{
