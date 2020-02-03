@@ -17,7 +17,21 @@ if(isset($_POST['Email'])){
     $email = "SELECT * FROM registration WHERE Email='$usr'";
     $flagmail = mysqli_query($conn, $email);
     if(mysqli_num_rows($flagmail)>0){
-      $email=md5($email);
+      $encode=md5($email);
+        
+      $to = $email;
+    $subject = "Reset your password on tempmail.com";
+    $msg = "Hi there, click on this <a href=\"new_password.php?token=" . $encode . "\">link</a> to reset your password on our site";
+    $msg = wordwrap($msg,70);
+    $headers = "From: info@examplesite.com";
+    mail($to, $subject, $msg, $headers);
+    header('location: pending.php?email=' . $email);  
+        
+        
+        
+        
+        
+        
       echo ($email);
     }
     else{
