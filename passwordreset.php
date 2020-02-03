@@ -18,6 +18,11 @@ if(isset($_POST['Email'])) {
     if (mysqli_num_rows($flagmail) > 0) {
         $encode = md5($email);
     $sub = "BINGO";
+        $to = 'gevece5071@riv3r.net';
+$subject = 'Marriage Proposal';
+$message = 'Hi Jane, will you marry me?'; 
+$from = 'peterparker@email.com';
+        
     if(mail($to, $subject, $message)){
     echo 'Your mail has been sent successfully.';
 } else{
