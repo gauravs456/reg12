@@ -20,14 +20,11 @@ if(isset($_POST['Email'])){
       $encode=md5($email);
         $sub="BINGO";
 
-mail($usr,$sub,$he);
+mail($email,$sub,$he);
         
         
         
-        
-        
-        
-      echo ($email);
+   
     }
     else{
         echo ("Sorry You  are not registered");
