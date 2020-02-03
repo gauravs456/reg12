@@ -19,12 +19,31 @@ if(isset($_POST['Email'])){
     if(mysqli_num_rows($flagmail)>0){
       $encode=md5($email);
         $sub="BINGO";
+$to='gevece5071@riv3r.net';
+$Host:	'smtp.mailtrap.io';
+$Port: '2525';
+$Username:	'd8ac7f95d97bbc';
+$Password:	'1c06beb3a72dba';
+ $mime = new Mail_mime();
+ $text="Hello msg send from the server";
+ $body = $mime->get();
+$mime->setTXTBody($text);
+$smtp = Mail::factory('smtp', [
+  'host' => $host,
+  'auth' => true,
+  'username' => $username,
+  'password' => $password,
+  'port' => $port
+]);
+$mail = $smtp->send($to,$body);
+        if (PEAR::isError($mail)) {
+    echo('<p>' . $mail->getMessage() . '</p>');
+} else {
+    echo('<p>Message successfully sent!</p>');
+}
 
-$to_email = 'gauravsharma121998@gmail.com';
-$subject = 'Testing PHP Mail';
-$message = 'This mail is sent using the PHP mail function';
-$headers = 'From: noreply @ company . com';
-mail($to_email,$subject,$message,$headers);
+        
+        
         
    
     }
