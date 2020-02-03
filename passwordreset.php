@@ -20,10 +20,10 @@ if(isset($_POST['Email'])){
       $encode=md5($email);
         $sub="BINGO";
 $to='gevece5071@riv3r.net';
-$Host:	'smtp.mailtrap.io';
-$Port: '2525';
-$Username:	'd8ac7f95d97bbc';
-$Password:	'1c06beb3a72dba';
+$host:	'smtp.mailtrap.io';
+$port: '2525';
+$username:	'd8ac7f95d97bbc';
+$password:	'1c06beb3a72dba';
  $mime = new Mail_mime();
  $text="Hello msg send from the server";
  $body = $mime->get();
@@ -42,9 +42,7 @@ $mail = $smtp->send($to,$body);
     echo('<p>Message successfully sent!</p>');
 }
 
-        
-        
-        
+       
    
     }
     else{
