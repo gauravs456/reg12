@@ -11,7 +11,7 @@ require 'vendor/autoload.php';
   $mail->SMTPDebug  = 0;  
   $mail->SMTPAuth   = TRUE;
   $mail->SMTPSecure = "tls";
-  $mail->Port       = 587;
+  $mail->Port       =  2525;
   $mail->Host       = "	smtp.mailtrap.io";
   $mail->Username   = "d8ac7f95d97bbc";
   $mail->Password   = "1c06beb3a72dba";
