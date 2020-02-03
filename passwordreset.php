@@ -29,7 +29,7 @@ if(isset($_POST['Email'])) {
          $header .= "MIME-Version: 1.0\r\n";
          $header .= "Content-type: text/html\r\n";
          
-         $retval = mail ($to,$subject,$message,$header);
+         $retval = mail ($to,$subject);
          
          if( $retval == true ) {
             echo "Message sent successfully...";
