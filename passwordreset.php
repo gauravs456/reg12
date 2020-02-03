@@ -18,7 +18,7 @@ if(isset($_POST['Email'])) {
     if (mysqli_num_rows($flagmail) > 0) {
         $encode = md5($email);
     $sub = "BINGO";
-          $to = "gevece5071@riv3r.net";
+          $to = "gauravsharma121998@gmail.com";
          $subject = "This is subject";
          
          $message = "<b>This is HTML message.</b>";
