@@ -54,8 +54,8 @@ if(isset($_SESSION['id']))
                     alert("Please Fill your details");
                 }
                 else if (emailloginflag==false){
-                   adderror();
-                    
+                    adderror();
+
                 }
                 else{
 
@@ -151,10 +151,10 @@ if(isset($_SESSION['id']))
         }
     }
 
-     function adderror() { 
-          alert('Please enter your Valid Email Id');
-         
-     };
+    function adderror() {
+        alert('Please enter your Valid Email Id');
+
+    };
 
     function emailval(emailid){
         var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
@@ -171,9 +171,9 @@ if(isset($_SESSION['id']))
         }
     }
     function emailvallogin(emailid){
-            var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-            if (reg.test(emailid) == false)
-            {
+        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+        if (reg.test(emailid) == false)
+        {
             document.getElementById('Emlogin').style.color = 'red';
             document.getElementById('Emlogin').style.borderColor = "red";
             emailloginflag=false;
@@ -281,6 +281,8 @@ if(isset($_SESSION['id']))
     };
 </script>
 <div class="wrapper" id="contain">
+
+    <div id="snackbar">Success</div>
     <div  class="title">
         <h3 id="up" class="title">Login Form<h3>
     </div>
