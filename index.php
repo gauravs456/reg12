@@ -90,6 +90,8 @@ if(isset($_SESSION['id']))
         
         $(document).ready(function () {
         $('.forgotbtn').on('click', function() {
+            
+            alert("HII");
 
             $('#editmodal').modal('show');
 
