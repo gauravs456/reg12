@@ -18,14 +18,9 @@ if(isset($_POST['Email'])){
     $flagmail = mysqli_query($conn, $email);
     if(mysqli_num_rows($flagmail)>0){
       $encode=md5($email);
-        
-   $to = $email;
-$subject = "YUPPSS";
-$txt = "Hello world!";
-$headers = "From: webmaster@example.com" . "\r\n" .
-"CC: somebodyelse@example.com";
+        $sub="BINGO";
 
-mail($to,$subject,$txt,$headers);
+mail($usr,$sub,$he);
         
         
         
