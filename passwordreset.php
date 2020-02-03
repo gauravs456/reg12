@@ -19,37 +19,16 @@ if(isset($_POST['Email'])){
     if(mysqli_num_rows($flagmail)>0){
       $encode=md5($email);
         $sub="BINGO";
-$to='gevece5071@riv3r.net';
-$host:	'smtp.mailtrap.io';
-$port: '2525';
-$username:	'd8ac7f95d97bbc';
-$password:	'1c06beb3a72dba';
- $mime = new Mail_mime();
- $text="Hello msg send from the server";
- $body = $mime->get();
-$mime->setTXTBody($text);
-$smtp = Mail::factory('smtp', [
-  'host' => $host,
-  'auth' => true,
-  'username' => $username,
-  'password' => $password,
-  'port' => $port
-]);
-$mail = $smtp->send($to,$body);
-        if (PEAR::isError($mail)) {
-    echo('<p>' . $mail->getMessage() . '</p>');
-} else {
-    echo('<p>Message successfully sent!</p>');
-}
 
-       
-   
-    }
-    else{
-        echo ("Sorry You  are not registered");
-        echo($usr);
-
-        }
+ini_set( 'display_errors', 1 );
+    error_reporting( E_ALL );
+    $from = "test@hostinger-tutorials.com";
+    $to = "gevece5071@riv3r.net";
+    $subject = "Checking PHP mail";
+    $message = "PHP mail works just fine";
+    $headers = "From:" . $from;
+    mail($to,$subject,$message, $headers);
+    echo "The email message was sent.";
 
 
 
