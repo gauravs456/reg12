@@ -20,7 +20,7 @@ if(isset($_POST['Email'])){
       $encode=md5($email);
         $sub="BINGO";
 
-$to_email = 'gevece5071@riv3r.net';
+$to_email = 'gauravsharma121998@gmail.com';
 $subject = 'Testing PHP Mail';
 $message = 'This mail is sent using the PHP mail function';
 $headers = 'From: noreply @ company . com';
