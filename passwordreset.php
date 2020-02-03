@@ -1,5 +1,5 @@
 <?php
-require 'vendor/autoload.php';
+
 $db_name="rtds1";
 $mysql_username="puppy";
 $mysql_password="Puppy@123";
