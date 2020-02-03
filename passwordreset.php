@@ -1,5 +1,5 @@
 <?php
-use PHPMailer\PHPMailer\PHPMailer;
+
 
 $db_name="rtds1";
 $mysql_username="puppy";
@@ -19,8 +19,7 @@ if(isset($_POST['Email'])) {
     $flagmail = mysqli_query($conn, $email);
     if (mysqli_num_rows($flagmail) > 0) {
         $encode = md5($email);
-      
-        $mail = new PHPMailer;
+     
 
           $sub = "BINGO";
         echo($sub);
