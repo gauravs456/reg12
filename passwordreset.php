@@ -12,31 +12,32 @@ if ($conn->connect_error) {
 }
 
 
-if(isset($_POST['Email'])){
-    $usr=mysqli_real_escape_string($conn,$_POST['Email']);
+if(isset($_POST['Email'])) {
+    $usr = mysqli_real_escape_string($conn, $_POST['Email']);
     $email = "SELECT * FROM registration WHERE Email='$usr'";
     $flagmail = mysqli_query($conn, $email);
-    if(mysqli_num_rows($flagmail)>0){
-      $encode=md5($email);
-        $sub="BINGO";
+    if (mysqli_num_rows($flagmail) > 0) {
+        $encode = md5($email);
+        $sub = "BINGO";
 
-ini_set( 'display_errors', 1 );
-    error_reporting( E_ALL );
-    $from = "test@hostinger-tutorials.com";
-    $to = "gevece5071@riv3r.net";
-    $subject = "Checking PHP mail";
-    $message = "PHP mail works just fine";
-    $headers = "From:" . $from;
-    mail($to,$subject,$message, $headers);
-    echo "The email message was sent.";
-
-
+        ini_set('display_errors', 1);
+        error_reporting(E_ALL);
+        $from = "test@hostinger-tutorials.com";
+        $to = "gevece5071@riv3r.net";
+        $subject = "Checking PHP mail";
+        $message = "PHP mail works just fine";
+        $headers = "From:" . $from;
+        mail($to, $subject, $message, $headers);
+        echo "The email message was sent.";
 
 
+    }
+    else{
+        echo("Not Registered");
+    }
 }
 
-}
-$conn->close();
+    $conn->close();
 
 
-?>
+    ?>
