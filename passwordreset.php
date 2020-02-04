@@ -12,7 +12,7 @@ $email=($_POST['resetemail']);
     $flagmail = mysqli_query($conn, $em);
     if (mysqli_num_rows($flagmail) > 0) { 
         $name=$row['name'];
-        echo $name;
+        
         $encode=md5($email);
 $mail = new PHPMailer;
 $mail->isSMTP();                                      // Set mailer to use SMTP
@@ -39,7 +39,7 @@ if(!$mail->send()) {
     
 } else {
     echo 'Message has been sent';
-  
+  echo $name;
 
 }
    
