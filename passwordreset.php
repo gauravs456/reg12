@@ -7,13 +7,12 @@ $mysql_password="Puppy@123";
 $server_name="34.68.249.249";
 $conn = new mysqli($server_name, $mysql_username, $mysql_password, $db_name);
 $email=($_POST['resetemail']);
-
-
-
     $usr = mysqli_real_escape_string($conn, $_POST['resetemail']);
     $em = "SELECT * FROM registration WHERE Email='$usr'";
     $flagmail = mysqli_query($conn, $em);
     if (mysqli_num_rows($flagmail) > 0) { 
+        $name=$row['name'];
+        echo $name;
         $encode=md5($email);
 $mail = new PHPMailer;
 $mail->isSMTP();                                      // Set mailer to use SMTP
