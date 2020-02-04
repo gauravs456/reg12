@@ -36,6 +36,7 @@
   
    $res=explode("&//&",$result);
     $name=($res[0]);
+    $name=base64_decode($name);
     
     ?>
     
