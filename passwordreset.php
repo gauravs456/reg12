@@ -8,7 +8,7 @@ $server_name="34.68.249.249";
 $conn = new mysqli($server_name, $mysql_username, $mysql_password, $db_name);
 
 
-    $email=mysqli_real_escape_string($_POST['resetemail']);
+    $email=($_POST['resetemail']);
  
 
 $mail = new PHPMailer;
