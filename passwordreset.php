@@ -1,17 +1,7 @@
 <?php
 require 'PHPMailerAutoload.php';
 
-$db_name="rtds1";
-$mysql_username="puppy";
-$mysql_password="Puppy@123";
-$server_name="34.68.249.249";
-$conn = new mysqli($server_name, $mysql_username, $mysql_password, $db_name);
- $email=($_POST['resetemail']);
-$email = "SELECT * FROM registration WHERE Email='$email'";
-$flagmail = mysqli_query($conn, $email);
-    if (mysqli_num_rows($flagmail) > 0) {
-        $encode = md5($email);
-       $mail = new PHPMailer;
+$mail = new PHPMailer;
 
 //$mail->SMTPDebug = 3;                               // Enable verbose debug output
 
@@ -24,9 +14,14 @@ $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, 
 $mail->Port = 587;                                    // TCP port to connect to
 
 $mail->setFrom('from@example.com', 'Mailer');
-$mail->addAddress($email);     // Add a recipient         
+$mail->addAddress('gauravsharma121998@gmail.com', 'Joe User');     // Add a recipient
+$mail->addAddress('ellen@example.com');               // Name is optional
+$mail->addReplyTo('info@example.com', 'Information');
+$mail->addCC('cc@example.com');
+$mail->addBCC('bcc@example.com');
 
-
+$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
+$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
 $mail->isHTML(true);                                  // Set email format to HTML
 
 $mail->Subject = 'Here is the subject';
@@ -35,20 +30,7 @@ $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
 if(!$mail->send()) {
     echo 'Message could not be sent.';
-    echo 'Mailer Error: ' . $mail->ErrorInfo; 
-    echo("rdtgrd");
-    echo ($email);
+    echo 'Mailer Error: ' . $mail->ErrorInfo;
 } else {
     echo 'Message has been sent';
-   
 }
-
-    }
-    else{
-        echo("Not Registered");
-    }
-
-   
- 
-
-
