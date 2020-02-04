@@ -6,15 +6,12 @@ $mysql_username="puppy";
 $mysql_password="Puppy@123";
 $server_name="34.68.249.249";
 $conn = new mysqli($server_name, $mysql_username, $mysql_password, $db_name);
-
-
 $email=($_POST['resetemail']);
-
-
+ $query = "SELECT * FROM registration WHERE Email='$email'";
+$run=msqli_query($conn,$query);
+if(mysqli_num_query($run)>0){
+    
 $mail = new PHPMailer;
-
-//$mail->SMTPDebug = 3;                               // Enable verbose debug output
-
 $mail->isSMTP();                                      // Set mailer to use SMTP
 $mail->Host = 'smtp.mailtrap.io';  // Specify main and backup SMTP servers
 $mail->SMTPAuth = true;                               // Enable SMTP authentication
@@ -42,3 +39,20 @@ if(!$mail->send()) {
     echo 'Message has been sent';
 
 }
+   
+    
+    
+    
+}
+else{
+    
+   echo("Sorry your are not registered");
+}
+
+
+
+
+
+
+
+
