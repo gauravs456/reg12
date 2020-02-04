@@ -1,6 +1,6 @@
 <?php
 require 'PHPMailerAutoload.php';
-$usr=$_POST['resetemail'];
+$usr=mysqli_real_escape_string($_POST['resetemail']);
 
 $mail = new PHPMailer;
 
