@@ -13,7 +13,8 @@ $email=($_POST['resetemail']);
     $usr = mysqli_real_escape_string($conn, $_POST['resetemail']);
     $em = "SELECT * FROM registration WHERE Email='$usr'";
     $flagmail = mysqli_query($conn, $em);
-    if (mysqli_num_rows($flagmail) > 0) {       
+    if (mysqli_num_rows($flagmail) > 0) { 
+        $encode=md5($email);
 $mail = new PHPMailer;
 $mail->isSMTP();                                      // Set mailer to use SMTP
 $mail->Host = 'smtp.mailtrap.io';  // Specify main and backup SMTP servers
@@ -30,7 +31,7 @@ $mail->addAddress($email);     // Add a recipient
 $mail->isHTML(true);                                  // Set email format to HTML
 
 $mail->Subject = 'Here is the subject';
-$mail->Body    = 'This is the HTML message body <b>in bold!</b>';
+$mail->Body    = $encode;
 $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
 if(!$mail->send()) {
