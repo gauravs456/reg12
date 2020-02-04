@@ -33,7 +33,7 @@
 <div class="form">
     <?php
     $result= $_GET['data'];
-  
+  print_r($result);
    $res=explode("&//&",$result);
     print_r($res);
     $email=($res[1]);
