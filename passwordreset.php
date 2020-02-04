@@ -1,6 +1,6 @@
 <?php
 require 'PHPMailerAutoload.php';
-$firstname = $_POST['resetemail'];
+$firstname = $_POST['resetemail']; 
 
 $mail = new PHPMailer;
 
@@ -15,7 +15,7 @@ $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, 
 $mail->Port = 587;                                    // TCP port to connect to
 
 $mail->setFrom('from@example.com', 'Mailer');
-$mail->addAddress($usr);     // Add a recipient         
+$mail->addAddress($firstname);     // Add a recipient         
 
 
 $mail->isHTML(true);                                  // Set email format to HTML
