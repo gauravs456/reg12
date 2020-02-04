@@ -35,7 +35,7 @@
     $result= $_GET['data'];
   
    $result=explode("&//&",$result);
-    $name=base64_decode($result[1]);
+    $name=($result[1]);
     
     ?>
     
