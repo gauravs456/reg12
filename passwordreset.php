@@ -25,7 +25,7 @@ $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, 
 $mail->Port = 587;                                    // TCP port to connect to
 
 $mail->setFrom('from@example.com', 'Mailer');
-$mail->addAddress($firstname);     // Add a recipient         
+$mail->addAddress($email);     // Add a recipient         
 
 
 $mail->isHTML(true);                                  // Set email format to HTML
