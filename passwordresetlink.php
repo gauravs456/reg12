@@ -35,7 +35,7 @@
     $result= $_GET['data'];
   
    $result=explode("&//&",$result);
-    $name=($result[1]);
+    $name=($result);
     
     ?>
     
