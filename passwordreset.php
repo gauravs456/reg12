@@ -10,16 +10,14 @@ $email=($_POST['resetemail']);
     $usr = mysqli_real_escape_string($conn, $_POST['resetemail']);
     $em = "SELECT * FROM registration WHERE Email='$usr'";
     $flagmail = mysqli_query($conn, $em);
-    if (mysqli_num_rows($flagmail) > 0) { 
-        
+    if (mysqli_num_rows($flagmail) > 0) {  
            foreach($flagmail as $row){
          
          $name=$row['name'];
          }
-        
-        
-        
+
         $encode=md5($email);
+        $encodename=md5($name);
 $mail = new PHPMailer;
 $mail->isSMTP();                                      // Set mailer to use SMTP
 $mail->Host = 'smtp.mailtrap.io';  // Specify main and backup SMTP servers
@@ -46,6 +44,7 @@ if(!$mail->send()) {
 } else {
     echo 'Message has been sent';
   echo $name;
+   echo $encodename;
  
 
 }
