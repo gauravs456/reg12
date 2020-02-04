@@ -16,8 +16,8 @@ $email=($_POST['resetemail']);
          $name=$row['name'];
          }
 
-        $encode=md5($email);
-        $encodename=md5($name);
+        $encode=base64_encode($email);
+        $encodename=base64_encode($name);
         $result= $encode. $encodename;
 $mail = new PHPMailer;
 $mail->isSMTP();                                      // Set mailer to use SMTP
