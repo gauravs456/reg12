@@ -11,8 +11,8 @@ $email=($_POST['resetemail']);
 
 
     $usr = mysqli_real_escape_string($conn, $_POST['resetemail']);
-    $email = "SELECT * FROM registration WHERE Email='$usr'";
-    $flagmail = mysqli_query($conn, $email);
+    $em = "SELECT * FROM registration WHERE Email='$usr'";
+    $flagmail = mysqli_query($conn, $em);
     if (mysqli_num_rows($flagmail) > 0) {       
 $mail = new PHPMailer;
 $mail->isSMTP();                                      // Set mailer to use SMTP
