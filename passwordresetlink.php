@@ -51,8 +51,7 @@
     <form id="login_form" name="login_form" method="post" onsubmit="return(validate());">
         <div class="inputfield">
             <label>Your New Password</label>
-            <input type="password" class="input" id="Emlogin" autocomplete="off" name="Emlogin"
-                   onkeyup="emailvallogin(this.value);">
+            <input type="password" class="input" id="Emlogin" autocomplete="off" name="Emlogin">
         </div>
 
         <div class="inputfield">
