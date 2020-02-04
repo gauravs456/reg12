@@ -407,7 +407,7 @@ if(isset($_SESSION['id']))
 
                     <div class="form-group">
                         <label> Email Addresss </label>
-                        <input type="text" name="name" id="name" class="form-control" placeholder="Enter your Email  Address">
+                        <input type="text" name="resetemail" id="name" class="form-control" placeholder="Enter your Email  Address">
                     </div>
 
                                  <div class="modal-footer">
