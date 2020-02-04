@@ -36,7 +36,7 @@
   
     $email = substr($result, 0, 32);
     $name= substr($result, 32, 64);
-    
+    $name=md5($name);
     
     ?>
     
