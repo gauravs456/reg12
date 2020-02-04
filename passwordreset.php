@@ -1,6 +1,16 @@
 <?php
 require 'PHPMailerAutoload.php';
-$firstname = $_POST['resetemail']; 
+
+$db_name="rtds1";
+$mysql_username="puppy";
+$mysql_password="Puppy@123";
+$server_name="34.68.249.249";
+$conn = new mysqli($server_name, $mysql_username, $mysql_password, $db_name);
+
+if(isset($_POST['Name'])){
+    $email=mysqli_real_escape_string($conn,$_POST['resetemail']);
+}
+ 
 
 $mail = new PHPMailer;
 
@@ -28,7 +38,7 @@ if(!$mail->send()) {
     echo 'Message could not be sent.';
     echo 'Mailer Error: ' . $mail->ErrorInfo; 
     echo("rdtgrd");
-    echo ($firstname);
+    echo ($email);
 } else {
     echo 'Message has been sent';
    
