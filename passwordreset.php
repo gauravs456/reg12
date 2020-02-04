@@ -9,7 +9,7 @@ $conn = new mysqli($server_name, $mysql_username, $mysql_password, $db_name);
 $email=($_POST['resetemail']);
 
 
-if(isset($_POST['resetmail'])) {
+
     $usr = mysqli_real_escape_string($conn, $_POST['resetemail']);
     $email = "SELECT * FROM registration WHERE Email='$usr'";
     $flagmail = mysqli_query($conn, $email);
@@ -22,7 +22,7 @@ if(isset($_POST['resetmail'])) {
     else{
         echo("Not Registered");
     }
-}
+
 
     
 // $mail = new PHPMailer;
