@@ -25,6 +25,7 @@
 
 <body>
 
+    console.log($_GET['data'];)
 
 
 
