@@ -34,7 +34,7 @@
     <?php
     $result= $_GET['data'];
   print_r($result);
-   $res=explode("&//&",$result);
+   $res=explode("/?dd?",$result);
     print_r($res);
     $email=($res[1]);
     $name=($res[0]);
