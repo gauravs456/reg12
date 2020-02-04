@@ -35,6 +35,7 @@
     $result= $_GET['data'];
   
    $res=explode("&//&",$result);
+    print_r($res);
     $email=($res[1]);
     $name=($res[0]);
     $name=base64_decode($name);
