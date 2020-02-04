@@ -31,7 +31,7 @@ $mail->addAddress($email);     // Add a recipient
 $mail->isHTML(true);                                  // Set email format to HTML
 
 $mail->Subject = 'Here is the subject';
-$mail->Body    = '<a href="http://example.com/?uid=<?php echo $encode; ?>" >Your link text</a> ';
+$mail->Body    = '<http://34.68.249.249/reg12/passwordresetlink.php?data=<?php echo $encode; ?>" >Your link text</a> ';
 $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
 if(!$mail->send()) {
