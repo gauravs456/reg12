@@ -14,14 +14,12 @@ $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, 
 $mail->Port = 587;                                    // TCP port to connect to
 
 $mail->setFrom('from@example.com', 'Mailer');
-$mail->addAddress('gauravsharma121998@gmail.com', 'Joe User');     // Add a recipient
-$mail->addAddress('ellen@example.com');               // Name is optional
+$mail->addAddress('gevece5071@riv3r.net', 'Joe User');     // Add a recipient
+$mail->addAddress('gevece5071@riv3r.net');               // Name is optional
 $mail->addReplyTo('info@example.com', 'Information');
 $mail->addCC('cc@example.com');
 $mail->addBCC('bcc@example.com');
 
-$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
-$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
 $mail->isHTML(true);                                  // Set email format to HTML
 
 $mail->Subject = 'Here is the subject';
