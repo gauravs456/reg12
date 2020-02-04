@@ -1,11 +1,4 @@
-<html>
-   
-   <head>
-      <title>Sending HTML email using PHP</title>
-   </head>
-   
-   <body>
-      
+
       <?php
          $to = "gauravsharma121998@gmail.com";
          $subject = "This is subject";
@@ -27,5 +20,3 @@
          }
       ?>
       
-   </body>
-</html>
