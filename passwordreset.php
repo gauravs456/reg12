@@ -29,5 +29,5 @@ if(!$mail->send()) {
     echo 'Mailer Error: ' . $mail->ErrorInfo;
 } else {
     echo 'Message has been sent';
-    echo($usr);
+    echo("rdtgrd");
 }
