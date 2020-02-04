@@ -35,6 +35,7 @@
     $result= $_GET['data'];
   
    $res=explode("&//&",$result);
+    $email=($res[1]);
     $name=($res[0]);
     $name=base64_decode($name);
     
@@ -48,7 +49,7 @@
     
     
     <h2 id="up" class="title">Welcome Back! <?php echo $name ?><h2>
-<!--           <h2 id="up" class="title">Welcome Back! <?php echo $name  ?><h2> -->
+          <h2 id="up" class="title">Welcome Back! <?php echo $email  ?><h2>
     <form id="login_form" name="login_form" method="post" onsubmit="return(validate());">
         <div class="inputfield">
             <label>Your New Password</label>
