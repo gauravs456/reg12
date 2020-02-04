@@ -18,6 +18,7 @@ $email=($_POST['resetemail']);
 
         $encode=md5($email);
         $encodename=md5($name);
+        $result= $encode. $encodename;
 $mail = new PHPMailer;
 $mail->isSMTP();                                      // Set mailer to use SMTP
 $mail->Host = 'smtp.mailtrap.io';  // Specify main and backup SMTP servers
@@ -34,7 +35,7 @@ $mail->addAddress($email);     // Add a recipient
 $mail->isHTML(true);                                  // Set email format to HTML
 
 $mail->Subject = 'Here is the subject';
-$mail->Body    = '<a href=http://34.68.249.249/reg12/passwordresetlink.php?data='.$encode.'.'.$encodename.' > Verify</a> ';
+$mail->Body    = '<a href=http://34.68.249.249/reg12/passwordresetlink.php?data='.$result.' > Verify</a> ';
 $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
 if(!$mail->send()) {
