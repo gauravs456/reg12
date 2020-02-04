@@ -11,7 +11,11 @@ $email=($_POST['resetemail']);
     $em = "SELECT * FROM registration WHERE Email='$usr'";
     $flagmail = mysqli_query($conn, $em);
     if (mysqli_num_rows($flagmail) > 0) { 
-        $name=$row['name'];
+         foreach($flagmail as $row){
+         
+         $name=$row['name'];
+         }
+        
         
         $encode=md5($email);
 $mail = new PHPMailer;
