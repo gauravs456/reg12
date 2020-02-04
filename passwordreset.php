@@ -1,6 +1,7 @@
 <?php
 require 'PHPMailerAutoload.php';
 
+
 $mail = new PHPMailer;
 
 //$mail->SMTPDebug = 3;                               // Enable verbose debug output
@@ -14,7 +15,7 @@ $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, 
 $mail->Port = 587;                                    // TCP port to connect to
 
 $mail->setFrom('from@example.com', 'Mailer');
-$mail->addAddress('gauravsharma121998@gmail.com');     // Add a recipient         
+$mail->addAddress($_POST['Email']);     // Add a recipient         
 
 
 $mail->isHTML(true);                                  // Set email format to HTML
