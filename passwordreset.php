@@ -12,9 +12,11 @@ $email=($_POST['resetemail']);
     $flagmail = mysqli_query($conn, $em);
     if (mysqli_num_rows($flagmail) > 0) { 
         
+           foreach($flagmail as $row){
          
-         $name=$flagmail['name'];
-         
+         $name=$row['name'];
+         }
+        
         
         
         $encode=md5($email);
