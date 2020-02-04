@@ -33,7 +33,7 @@
 <div class="form">
     <?php
     $result= $_GET['data'];
-  print_r($result);
+ 
    $res=explode("---dd---",$result);
    
     $nm=($res[1]);
@@ -51,7 +51,6 @@
     
     
     <h2 id="up" class="title">Welcome Back! <?php echo $name ?><h2>
-          <h2 id="up" class="title">Welcome Back! <?php echo $email  ?><h2>
     <form id="login_form" name="login_form" method="post" onsubmit="return(validate());">
         <div class="inputfield">
             <label>Your New Password</label>
