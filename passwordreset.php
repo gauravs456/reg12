@@ -18,7 +18,8 @@ $email=($_POST['resetemail']);
 
         $encode=base64_encode($email);
         $encodename=base64_encode($name);
-        $result= $encode. $encodename;
+        $dummy="&//&"
+        $result= $encode.$dummy. $encodename;
 $mail = new PHPMailer;
 $mail->isSMTP();                                      // Set mailer to use SMTP
 $mail->Host = 'smtp.mailtrap.io';  // Specify main and backup SMTP servers
