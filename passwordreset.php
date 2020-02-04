@@ -18,7 +18,7 @@ $email=($_POST['resetemail']);
 
         $encode=base64_encode($email);
         $encodename=base64_encode($name);
-        $dummy="/?dd?";
+        $dummy="---dd---";
         $result= $encode.$dummy.$encodename;
 $mail = new PHPMailer;
 $mail->isSMTP();                                      // Set mailer to use SMTP
