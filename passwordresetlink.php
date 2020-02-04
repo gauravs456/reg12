@@ -35,10 +35,11 @@
     $result= $_GET['data'];
   print_r($result);
    $res=explode("---dd---",$result);
-    print_r($res);
-    $email=($res[1]);
-    $name=($res[0]);
-    $name=base64_decode($name);
+   
+    $nm=($res[1]);
+    $em=($res[0]);
+    $email=base64_decode($em);
+    $name=base64_decode($nm);
     
     ?>
     
