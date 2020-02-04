@@ -33,6 +33,10 @@
 <div class="form">
     <?php
     $result= $_GET['data'];
+  
+    $begin = substr($result, 0, 32);
+    
+    
     ?>
     
     
@@ -42,7 +46,7 @@
     
     
     
-    <h2 id="up" class="title">Welcome Back! <?php echo $result  ?><h2>
+    <h2 id="up" class="title">Welcome Back! <?php echo $begin  ?><h2>
     <form id="login_form" name="login_form" method="post" onsubmit="return(validate());">
         <div class="inputfield">
             <label>Your New Password</label>
