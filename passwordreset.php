@@ -15,7 +15,7 @@ $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, 
 $mail->Port = 587;                                    // TCP port to connect to
 
 $mail->setFrom('from@example.com', 'Mailer');
-$mail->addAddress($_POST['resetemail']);     // Add a recipient         
+$mail->addAddress($usr);     // Add a recipient         
 
 
 $mail->isHTML(true);                                  // Set email format to HTML
@@ -26,8 +26,10 @@ $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
 if(!$mail->send()) {
     echo 'Message could not be sent.';
-    echo 'Mailer Error: ' . $mail->ErrorInfo;
+    echo 'Mailer Error: ' . $mail->ErrorInfo; 
+    echo("rdtgrd");
+    echo ($usr);
 } else {
     echo 'Message has been sent';
-    echo("rdtgrd");
+   
 }
