@@ -1,6 +1,6 @@
 <?php
 require 'PHPMailerAutoload.php';
-
+$usr=$_POST['resetemail'];
 
 $mail = new PHPMailer;
 
@@ -29,4 +29,5 @@ if(!$mail->send()) {
     echo 'Mailer Error: ' . $mail->ErrorInfo;
 } else {
     echo 'Message has been sent';
+    echo($usr);
 }
