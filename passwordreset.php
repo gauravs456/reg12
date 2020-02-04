@@ -47,7 +47,7 @@ if(!$mail->send()) {
     echo 'Message has been sent';
   echo $name;
    
-    echo $encode;
+    echo $result;
  
 
 }
