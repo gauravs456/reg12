@@ -25,13 +25,13 @@
 
 <body>
 
-    console.log($_GET['data'];)
+   
 
 
 
 <div class="wrapper" id="contain">
 <div class="form">
-    <h2 id="up" class="title">Welcome Back ! gaurav <h2>
+    <h2 id="up" class="title">Welcome Back! <?php echo $_GET['data'];  ?><h2>
     <form id="login_form" name="login_form" method="post" onsubmit="return(validate());">
         <div class="inputfield">
             <label>Your New Password</label>
