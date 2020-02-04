@@ -7,6 +7,7 @@ $mysql_password="Puppy@123";
 $server_name="34.68.249.249";
 $conn = new mysqli($server_name, $mysql_username, $mysql_password, $db_name);
  $email=($_POST['resetemail']);
+$email = "SELECT * FROM registration WHERE Email='$email'";
 $flagmail = mysqli_query($conn, $email);
     if (mysqli_num_rows($flagmail) > 0) {
         $encode = md5($email);
